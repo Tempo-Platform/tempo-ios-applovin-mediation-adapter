@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "tempo-applovin-mediation"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "Tempo AppLovin iOS Mediation Adapter."
 
   spec.description  = <<-DESC
@@ -25,8 +25,8 @@ Pod::Spec.new do |spec|
   
   spec.source_files = "TempoAdapter/*.*"
    
-  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 x86_64' }
-  spec.user_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 x86_64' }
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 x86_64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 x86_64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.tempoplatform.applovin-adapter-sdk' }
   
 end
