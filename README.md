@@ -1,0 +1,1 @@
+# tempo-ios-applovin-mediation-adapter
