@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   spec.author       = { "Kieran" => "kieran@tempoplatform.com" }
   
-  spec.platform     = :ios, "10.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/Tempo-Platform/tempo-ios-applovin-mediation-adapter.git", :tag => spec.version.to_s }
   
   spec.frameworks   = "Foundation", "UIKit"
@@ -24,14 +24,9 @@ Pod::Spec.new do |spec|
   spec.dependency "AppLovinSDK"
   
   spec.source_files = "TempoAdapter/*.*"
-#  spec.script_phase = {
-#     :name => 'Hello ',
-#     :script => "echo 'Adding Custom Module Header' && touch Headers/Public/#tempo_ironsource_mediation/tempo_ironsource_mediation.h && echo '#import <IronSource/IronSource.h>' #>> Headers/Public/tempo_ironsource_mediation/tempo_ironsource_mediation.h",
-#     :execution_position => :after_compile
-#   }
    
-  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.tempoplatform.is-adapter-sdk' }
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7' }
+  spec.user_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7' }
+  spec.pod_target_xcconfig = { 'PRODUCT_BUNDLE_IDENTIFIER': 'com.tempoplatform.applovin-adapter-sdk' }
   
 end
