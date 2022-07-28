@@ -20,20 +20,27 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self)
-        completionHandler(MAAdapterInitializationStatus.doesNotApply, nil)
+        completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
     }
 
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         self.delegate = delegate
-        DispatchQueue.main.async {
-            self.interstitial!.loadAd()
-          }
+        if self.interstitial == nil {
+            self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self)
+        }
+        if self.interstitial != nil {
+            DispatchQueue.main.async {
+                self.interstitial!.loadAd()
+              }
+        } else {
+            self.delegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
+        }
     }
     
     public func showInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         self.delegate = delegate
         if (!isAdReady) {
-            delegate.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
+            self.delegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
             return
         }
         var viewController:UIViewController? = nil
@@ -57,6 +64,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     public func onAdClosed() {
         self.delegate?.didHideInterstitialAd()
+        self.interstitial = nil
         isAdReady = false
     }
     
