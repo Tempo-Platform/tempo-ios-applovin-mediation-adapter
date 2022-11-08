@@ -15,20 +15,23 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
 
     public override var adapterVersion : String {
-        return "0.0.1"
+        return "0.0.2"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
-        self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self)
+        self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self, appId: "PLACEHOLDER")
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
     }
 
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+        print(parameters.customParameters)
         self.delegate = delegate
         if self.interstitial == nil {
-            self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self)
+            let appId: String = parameters.customParameters["app_id"] as! String
+            self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self, appId: appId)
         }
         if self.interstitial != nil {
+            let appId: String = parameters.customParameters["app_id"] as! String
             DispatchQueue.main.async {
                 self.interstitial!.loadAd()
               }
@@ -49,7 +52,8 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         } else {
             viewController = ALUtils.topViewControllerFromKeyWindow()
         }
-        self.interstitial!.updateViewController(parentViewController: viewController)
+        viewController = UIApplication.shared.keyWindow?.rootViewController
+        self.interstitial!.updateViewController(parentViewController: viewController!)
         self.interstitial!.showAd()
     }
 
@@ -59,7 +63,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
     
     public func onAdFetchFailed() {
-        self.delegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.unspecified)
+        self.delegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.unspecified)  // TODO: more detail in errors here
     }
     
     public func onAdClosed() {
@@ -70,5 +74,9 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     public func onAdDisplayed() {
         self.delegate?.didDisplayInterstitialAd()
+    }
+
+    public func onAdClicked() {
+        self.delegate?.didClickInterstitialAd()
     }
 }

@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "tempo-applovin-mediation"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.summary      = "Tempo AppLovin iOS Mediation Adapter."
 
   spec.description  = <<-DESC
-  Using this adapter you will be able to integrate Tempo SDK via ironSource mediation
+  Using this adapter you will be able to integrate Tempo SDK via AppLovin mediation
                    DESC
 
   spec.homepage     = "https://www.tempoplatform.com"
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.swift_version = '5.0'
 
-  spec.dependency "TempoSDK", "~> 0.0.11"
+  spec.dependency "TempoSDK", "~> 0.0.14"
   spec.dependency "AppLovinSDK"
   
   spec.source_files = "TempoAdapter/*.*"
