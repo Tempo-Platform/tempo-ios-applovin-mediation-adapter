@@ -32,6 +32,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         }
         if self.interstitial != nil {
             let appId: String = parameters.customParameters["app_id"] as! String
+            self.interstitial!.updateAppId(appId: appId)
             let cpmFloor: Float = ((parameters.customParameters["cpm_floor"] ?? "0") as! NSString).floatValue
             DispatchQueue.main.async {
                 self.interstitial!.loadAd(cpmFloor:cpmFloor)
