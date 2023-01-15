@@ -12,7 +12,7 @@ import AppLovinSDK
 
 class ALMAXRewardedAdViewController: ALBaseAdViewController, MARewardedAdDelegate, MAAdRevenueDelegate
 {
-    private let rewardedAd = MARewardedAd.shared(withAdUnitIdentifier: "YOUR_AD_UNIT_ID")
+    private let rewardedAd = MARewardedAd.shared(withAdUnitIdentifier: "1c0455c038d81052")
     private var retryAttempt = 0.0
     
     // MARK: View Lifecycle
