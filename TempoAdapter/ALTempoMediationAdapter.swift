@@ -18,7 +18,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
 
     public override var adapterVersion : String {
-        return "0.2.0"
+        return "0.2.1"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
