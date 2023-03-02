@@ -13,12 +13,12 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
 
-    public override var sdkVersion : String {
-        return String(TempoSDKVersionNumber)
+    public override var SDKVersion : String {
+        return "0.2.6"
     }
 
     public override var adapterVersion : String {
-        return "0.2.4"
+        return "0.2.5"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
