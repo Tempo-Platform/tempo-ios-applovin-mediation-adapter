@@ -14,11 +14,11 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
 
     public override var sdkVersion : String {
-        return "0.2.7"
+        return "0.2.8"
     }
 
     public override var adapterVersion : String {
-        return "0.2.7"
+        return "0.2.8"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
