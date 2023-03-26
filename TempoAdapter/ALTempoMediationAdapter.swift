@@ -18,7 +18,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
 
     public override var adapterVersion : String {
-        return "0.2.13"
+        return "0.2.14"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
@@ -28,7 +28,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         print(parameters.customParameters)
-        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier()
+        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
         self.interstitialDelegate = delegate
         if self.interstitial == nil {
             let appId: String = parameters.customParameters["app_id"] as! String
@@ -65,7 +65,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
         self.rewardedDelegate = delegate
-        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier()
+        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
         if self.rewarded == nil {
             let appId: String = parameters.customParameters["app_id"] as! String
             self.rewarded = TempoInterstitial(parentViewController: nil, delegate: self, appId: appId)
