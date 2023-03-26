@@ -14,11 +14,11 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
 
     public override var sdkVersion : String {
-        return "0.2.11"
+        return "0.2.14"
     }
 
     public override var adapterVersion : String {
-        return "0.2.11"
+        return "0.2.12"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
@@ -28,6 +28,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         print(parameters.customParameters)
+        let placementId = parameters.thirdPartyAdPlacementIdentifier()
         self.interstitialDelegate = delegate
         if self.interstitial == nil {
             let appId: String = parameters.customParameters["app_id"] as! String
@@ -38,8 +39,8 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.interstitial!.updateAppId(appId: appId)
             let cpmFloor: Float = ((parameters.customParameters["cpm_floor"] ?? "0") as! NSString).floatValue
             DispatchQueue.main.async {
-                self.interstitial!.loadAd(isInterstitial: true, cpmFloor:cpmFloor)
-              }
+                self.interstitial!.loadAd(isInterstitial: true, cpmFloor:cpmFloor, placementId: placementId)
+            }
         } else {
             self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
         }
@@ -64,6 +65,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
         self.rewardedDelegate = delegate
+        let placementId = parameters.thirdPartyAdPlacementIdentifier()
         if self.rewarded == nil {
             let appId: String = parameters.customParameters["app_id"] as! String
             self.rewarded = TempoInterstitial(parentViewController: nil, delegate: self, appId: appId)
@@ -73,7 +75,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.rewarded!.updateAppId(appId: appId)
             let cpmFloor: Float = ((parameters.customParameters["cpm_floor"] ?? "0") as! NSString).floatValue
             DispatchQueue.main.async {
-                self.rewarded!.loadAd(isInterstitial: false, cpmFloor:cpmFloor)
+                self.rewarded!.loadAd(isInterstitial: false, cpmFloor:cpmFloor, placementId: placementId))
               }
         } else {
             self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
