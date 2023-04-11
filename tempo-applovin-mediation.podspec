@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "tempo-applovin-mediation"
-  spec.version      = "0.2.15"
+  spec.version      = "0.2.16"
   spec.summary      = "Tempo AppLovin iOS Mediation Adapter."
 
   spec.description  = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.swift_version = '5.0'
 
-  spec.dependency "TempoSDK", "~> 0.2.14"
+  spec.dependency "TempoSDK", "~> 0.2.16"
   spec.dependency "AppLovinSDK"
   
   spec.source_files = "TempoAdapter/*.*"
