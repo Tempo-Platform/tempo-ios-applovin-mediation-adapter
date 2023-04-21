@@ -12,9 +12,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
+    var dynSdkVersion: String = "0.2.18"
 
     public override var sdkVersion : String {
-        return "0.2.18"
+        return dynSdkVersion
     }
 
     public override var adapterVersion : String {
@@ -23,6 +24,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self, appId: "PLACEHOLDER")
+        
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
     }
 
@@ -151,5 +153,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         if (!isInterstitial && (self.rewardedDelegate != nil)) {
             self.rewardedDelegate?.didClickRewardedAd()
         }
+    }
+    
+    public func onVersionExchange(sdkVersion: String) ->  String {
+        dynSdkVersion = sdkVersion;
+        return adapterVersion;
     }
 }
