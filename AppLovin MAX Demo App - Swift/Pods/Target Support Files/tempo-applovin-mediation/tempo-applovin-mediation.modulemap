@@ -1,0 +1,6 @@
+framework module tempo_applovin_mediation {
+  umbrella header "tempo-applovin-mediation-umbrella.h"
+
+  export *
+  module * { export * }
+}
