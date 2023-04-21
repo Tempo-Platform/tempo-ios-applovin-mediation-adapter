@@ -155,7 +155,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         }
     }
     
-    public func onVersionExchange(sdkVersion: String) ->  String {
+    public func onVersionExchange(sdkVersion: String) ->  String? {
         dynSdkVersion = sdkVersion;
         return adapterVersion;
     }
