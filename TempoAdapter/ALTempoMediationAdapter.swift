@@ -13,14 +13,14 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
-    var dynSdkVersion: String = "1.0.0"
+    var dynSdkVersion: String = "1.0.1"
 
     public override var sdkVersion : String {
         return dynSdkVersion
     }
 
     public override var adapterVersion : String {
-        return "1.0.0"
+        return "1.0.1"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
