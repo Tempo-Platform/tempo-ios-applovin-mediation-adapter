@@ -6,6 +6,8 @@ import AppLovinSDK
 @objc(ALTempoMediationAdapter)
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoInterstitialListener {
 
+    
+
 
     var interstitial: TempoInterstitial? = nil
     var rewarded: TempoInterstitial? = nil
@@ -163,6 +165,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     public func onVersionExchange(sdkVersion: String) -> String? {
         dynSdkVersion = sdkVersion;
         return adapterVersion;
+    }
+ 
+    public func onGetAdapterType() -> String? {
+        return "APPLOVIN"
     }
     
 }
