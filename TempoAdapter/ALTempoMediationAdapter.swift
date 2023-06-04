@@ -15,14 +15,14 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
-    var dynSdkVersion: String = "1.0.1"
+    var dynSdkVersion: String = "1.0.2"
 
     public override var sdkVersion : String {
         return dynSdkVersion
     }
 
     public override var adapterVersion : String {
-        return "1.0.1"
+        return "1.0.2"
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
@@ -169,6 +169,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
  
     public func onGetAdapterType() -> String? {
         return "APPLOVIN"
+    }
+    
+    private func getTypeWord(isInterstitial: Bool) -> String {
+        return isInterstitial ? "INTERSTIIAL" : "REWARDED"
     }
     
 }
