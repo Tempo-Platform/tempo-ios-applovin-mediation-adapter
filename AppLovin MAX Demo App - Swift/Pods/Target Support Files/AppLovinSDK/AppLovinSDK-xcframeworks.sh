@@ -117,5 +117,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.9.0/AppLovinSDK.xcframework" "AppLovinSDK" "framework" "ios-arm64_x86_64-simulator" "ios-arm64_armv7"
+install_xcframework "${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.10.1/AppLovinSDK.xcframework" "AppLovinSDK" "framework" "ios-arm64_x86_64-simulator" "ios-arm64_armv7"
 
