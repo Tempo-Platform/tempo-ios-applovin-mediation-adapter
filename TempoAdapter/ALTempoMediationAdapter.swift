@@ -6,34 +6,42 @@ import AppLovinSDK
 @objc(ALTempoMediationAdapter)
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoInterstitialListener {
 
-    
-
-
+    let tempoAdapterVersion: String = "1.0.5"
     var interstitial: TempoInterstitial? = nil
     var rewarded: TempoInterstitial? = nil
     var isInterstitialReady: Bool = false
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
-    var dynSdkVersion: String = "1.0.4"
+    var dynSdkVersion: String = "1.0.5"
+    var hasUserContent: Bool?
+    var isDoNotSell: Bool?
+    var isAgeRestrictedUser: Bool?
 
     public override var sdkVersion : String {
         return dynSdkVersion
     }
 
     public override var adapterVersion : String {
-        return "1.0.4"
+        return tempoAdapterVersion
     }
     
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self, appId: "PLACEHOLDER")
+        
+        hasUserContent = ALPrivacySettings.hasUserConsent()
+        isDoNotSell = ALPrivacySettings.isDoNotSell()
+        isAgeRestrictedUser = ALPrivacySettings.isAgeRestrictedUser()
         
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
     }
 
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         print(parameters.customParameters)
+        
         let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
+        
+        
         self.interstitialDelegate = delegate
         if self.interstitial == nil {
             let appId: String = parameters.customParameters["app_id"] as! String
@@ -169,6 +177,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
  
     public func onGetAdapterType() -> String? {
         return "APPLOVIN"
+    }
+
+    public func hasUserConsent() -> Bool? {
+        return hasUserConsent()
     }
     
     private func getTypeWord(isInterstitial: Bool) -> String {
