@@ -13,8 +13,8 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
-    var dynSdkVersion: String = "1.0.5"
-    var hasUserContent: Bool?
+    var dynSdkVersion: String = "1.0.6"
+    var alHasUserConsent: Bool?
     var isDoNotSell: Bool?
     var isAgeRestrictedUser: Bool?
 
@@ -29,7 +29,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         self.interstitial = TempoInterstitial(parentViewController: nil, delegate: self, appId: "PLACEHOLDER")
         
-        hasUserContent = ALPrivacySettings.hasUserConsent()
+        alHasUserConsent = ALPrivacySettings.hasUserConsent()
         isDoNotSell = ALPrivacySettings.isDoNotSell()
         isAgeRestrictedUser = ALPrivacySettings.isAgeRestrictedUser()
         
@@ -180,7 +180,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
 
     public func hasUserConsent() -> Bool? {
-        return hasUserConsent()
+        return alHasUserConsent
     }
     
     private func getTypeWord(isInterstitial: Bool) -> String {
