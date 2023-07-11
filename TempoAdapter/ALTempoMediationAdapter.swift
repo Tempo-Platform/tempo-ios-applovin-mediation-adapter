@@ -6,7 +6,7 @@ import AppLovinSDK
 @objc(ALTempoMediationAdapter)
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoInterstitialListener {
 
-    let tempoAdapterVersion: String = "1.0.6"
+    let tempoAdapterVersion: String = "1.0.8"
     var interstitial: TempoInterstitial? = nil
     var rewarded: TempoInterstitial? = nil
     var isInterstitialReady: Bool = false

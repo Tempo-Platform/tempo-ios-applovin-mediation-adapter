@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "tempo-applovin-mediation"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.8"
   spec.summary      = "Tempo AppLovin iOS Mediation Adapter."
 
   spec.description  = <<-DESC
