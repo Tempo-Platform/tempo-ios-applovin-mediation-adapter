@@ -6,14 +6,14 @@ import AppLovinSDK
 @objc(ALTempoMediationAdapter)
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoInterstitialListener {
 
-    let tempoAdapterVersion: String = "1.0.5"
+    let tempoAdapterVersion: String = "1.0.6"
     var interstitial: TempoInterstitial? = nil
     var rewarded: TempoInterstitial? = nil
     var isInterstitialReady: Bool = false
     var isRewardedReady: Bool = false
     var interstitialDelegate: MAInterstitialAdapterDelegate? = nil
     var rewardedDelegate: MARewardedAdapterDelegate? = nil
-    var dynSdkVersion: String = "1.0.6"
+    var dynSdkVersion: String = "1.0.7"
     var alHasUserConsent: Bool?
     var isDoNotSell: Bool?
     var isAgeRestrictedUser: Bool?

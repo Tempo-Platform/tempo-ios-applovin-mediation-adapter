@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.swift_version = '5.0'
 
-  spec.dependency "TempoSDK", "1.0.6"
+  spec.dependency "TempoSDK", "1.0.7"
   spec.dependency "AppLovinSDK"
   
   spec.source_files = "TempoAdapter/*.*"
