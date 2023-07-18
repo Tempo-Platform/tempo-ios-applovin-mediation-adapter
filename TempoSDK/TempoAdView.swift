@@ -38,8 +38,8 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
         self.appId = appId
         
         sdkVersion = Constants.SDK_VERSIONS
-        adapterVersion = self.listener.onVersionExchange(sdkVersion: self.sdkVersion)
-        adapterType = self.listener.onGetAdapterType()
+        adapterVersion = self.listener.getTempoAdapterVersion()
+        adapterType = self.listener.getTempoAdapterType()
         consent = self.listener.hasUserConsent()
         adId = getAdId()
     }
@@ -82,7 +82,7 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
         
         // Send SHOW metric and call activate DISPLAYED listener
         addMetric(metricType: Constants.MetricType.SHOW)
-        listener.onAdDisplayed(isInterstitial: self.isInterstitial ?? true)
+        listener.onTempoAdDisplayed(isInterstitial: self.isInterstitial ?? true)
         
         // Create JS statement to find video element and play.
         let script = Constants.JS.JS_FORCE_PLAY
@@ -102,7 +102,7 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
         webView = nil
         solidColorView = nil
         Metrics.pushMetrics(currentMetrics: &metricList, backupUrl: nil)
-        listener.onAdClosed(isInterstitial: self.isInterstitial ?? true)
+        listener.onTempoAdClosed(isInterstitial: self.isInterstitial ?? true)
     }
     
     /// Test function used to test specific campaign ID using dummy values fo other metrics
@@ -126,10 +126,6 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
         // Get Advertising ID (IDFA) // TODO: add proper IDFA alternative here if we don't have Ad ID
         let advertisingIdentifier: UUID = ASIdentifierManager().advertisingIdentifier
         return advertisingIdentifier.uuidString != Constants.ZERO_AD_ID ? advertisingIdentifier.uuidString : nil
-    }
-    
-    public func updateViewController(parentVC: UIViewController?) {
-        self.parentVC = parentVC
     }
     
     /// Generate REST-ADS-API web request with current session data
@@ -170,7 +166,7 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
                             if let status = jsonDict["status"] {
                                 if let statusString = status as? String {
                                     if statusString == Constants.NO_FILL {
-                                        self.listener.onAdFetchFailed(isInterstitial: self.isInterstitial ?? true)
+                                        self.listener.onTempoAdFetchFailed(isInterstitial: self.isInterstitial ?? true)
                                         print("Tempo SDK: Failed loading the Ad. Received NO_FILL response from API.")
                                         self.addMetric(metricType: Constants.NO_FILL)
                                         validResponse = true
@@ -235,7 +231,7 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
     
     func sendAdFetchFailed(reason: String) {
         print("Tempo SDK: Failed loading the Ad. \(reason).")
-        self.listener.onAdFetchFailed(isInterstitial: self.isInterstitial ?? true)
+        self.listener.onTempoAdFetchFailed(isInterstitial: self.isInterstitial ?? true)
         self.addMetric(metricType: Constants.MetricType.LOAD_FAILED)
     }
     
@@ -318,7 +314,7 @@ public class TempoAdView: UIViewController, WKNavigationDelegate, WKScriptMessag
             
             // Show success when content load
             if(webMsg == Constants.MetricType.IMAGES_LOADED) {
-                listener.onAdFetchSucceeded(isInterstitial: self.isInterstitial ?? true)
+                listener.onTempoAdFetchSucceeded(isInterstitial: self.isInterstitial ?? true)
                 self.addMetric(metricType: Constants.MetricType.LOAD_SUCCESS)
             }
         }
