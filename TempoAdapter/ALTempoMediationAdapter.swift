@@ -37,7 +37,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
         
         // Run any backups
-        TempoDataBackup.checkHeldMetrics(completion: Metrics.pushMetrics)
+        TempoDataBackup.initCheck()
     }
     
     /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
