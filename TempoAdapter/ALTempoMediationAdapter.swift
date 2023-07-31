@@ -124,7 +124,17 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     }
     
-    public func onAdFetchSucceeded(isInterstitial: Bool) {
+    
+    /// AppLovin overrides
+    public override var sdkVersion : String {
+        return Constants.SDK_VERSIONS
+    }
+    public override var adapterVersion : String {
+        return TEMPO_ADAPTER_VERSION
+    }
+    
+    /// TempoListener overrides
+    public func onTempoAdFetchSucceeded(isInterstitial: Bool) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didLoadInterstitialAd()
             isInterstitialReady = true
@@ -133,16 +143,14 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             isRewardedReady = true
         }
     }
-    
-    public func onAdFetchFailed(isInterstitial: Bool) {
+    public func onTempoAdFetchFailed(isInterstitial: Bool) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.unspecified)
         } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
             self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.unspecified)
         }
     }
-    
-    public func onAdClosed(isInterstitial: Bool) {
+    public func onTempoAdClosed(isInterstitial: Bool) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didHideInterstitialAd()
             self.interstitial = nil
@@ -156,40 +164,28 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.isRewardedReady = false
         }
     }
-    
-    public func onAdDisplayed(isInterstitial: Bool) {
+    public func onTempoAdDisplayed(isInterstitial: Bool) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didDisplayInterstitialAd()
         } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
             self.rewardedDelegate?.didDisplayRewardedAd()
         }
     }
-
-    public func onAdClicked(isInterstitial: Bool) {
+    public func onTempoAdClicked(isInterstitial: Bool) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didClickInterstitialAd()
         } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
             self.rewardedDelegate?.didClickRewardedAd()
         }
     }
-
-    public func getAdapterVersion() -> String? {
-        return adapterVersion;
+    public func getTempoAdapterVersion() -> String? {
+        return TEMPO_ADAPTER_VERSION
     }
- 
-    public func getAdapterType() -> String? {
+    public func getTempoAdapterType() -> String? {
         return ADAPTER_TYPE
     }
-
     public func hasUserConsent() -> Bool? {
         return alHasUserConsent
     }
     
-    public override var sdkVersion : String {
-        return Constants.SDK_VERSIONS
-    }
-
-    public override var adapterVersion : String {
-        return TEMPO_ADAPTER_VERSION
-    }
 }
