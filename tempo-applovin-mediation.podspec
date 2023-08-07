@@ -6,7 +6,7 @@
 
 Pod::Spec.new do |spec|
   spec.name          = 'tempo-applovin-mediation'
-  spec.version       = '1.2.0'
+  spec.version       = ''
   spec.swift_version = '5.0'
   spec.author        = { 'Tempo Engineering' => 'development@tempoplatform.com' }
   spec.license       = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
