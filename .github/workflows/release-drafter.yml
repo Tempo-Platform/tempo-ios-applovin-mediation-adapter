@@ -70,7 +70,7 @@ jobs:
       - name: Update Versions
         shell: pwsh
         run: |
-          $version = "${{ github.event.release.tag_name }}"
+          $version = "${{ needs.update-release-draft.outputs.version }}"
           
           Write-Output "Attempting to update podspec version to $version"
           $podspec = Get-Content "$env:PODSPEC_PATH"
