@@ -23,7 +23,7 @@
   "source_files": "TempoAdapter/*.*",
   "dependencies": {
     "TempoSDK": [
-      "1.2.4-rc.0"
+      "1.2.4"
     ],
     "AppLovinSDK": [
 

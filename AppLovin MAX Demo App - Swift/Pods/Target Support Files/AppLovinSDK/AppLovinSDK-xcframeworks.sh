@@ -17,11 +17,11 @@ RSYNC_PROTECT_TMP_FILES=(--filter "P .*.??????")
 variant_for_slice()
 {
   case "$1" in
-  "AppLovinSDK.xcframework/ios-arm64")
-    echo ""
-    ;;
   "AppLovinSDK.xcframework/ios-arm64_x86_64-simulator")
     echo "simulator"
+    ;;
+  "AppLovinSDK.xcframework/ios-arm64")
+    echo ""
     ;;
   esac
 }
@@ -29,11 +29,11 @@ variant_for_slice()
 archs_for_slice()
 {
   case "$1" in
-  "AppLovinSDK.xcframework/ios-arm64")
-    echo "arm64"
-    ;;
   "AppLovinSDK.xcframework/ios-arm64_x86_64-simulator")
     echo "arm64 x86_64"
+    ;;
+  "AppLovinSDK.xcframework/ios-arm64")
+    echo "arm64"
     ;;
   esac
 }
@@ -117,5 +117,5 @@ install_xcframework() {
   echo "Copied $source to $destination"
 }
 
-install_xcframework "${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.11.2/AppLovinSDK.xcframework" "AppLovinSDK" "framework" "ios-arm64" "ios-arm64_x86_64-simulator"
+install_xcframework "${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.11.3/AppLovinSDK.xcframework" "AppLovinSDK" "framework" "ios-arm64_x86_64-simulator" "ios-arm64"
 
