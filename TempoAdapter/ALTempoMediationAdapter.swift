@@ -41,30 +41,67 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     }
     
     /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
-    public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
-        TempoUtils.Say(msg: "\(parameters.customParameters)")
-        
-        self.interstitialDelegate = delegate
-        
-        // Get values from AppLovin and custom parameters
-        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
-        let appId: String = parameters.customParameters[CUST_APP_ID] as! String
-        let cpmFloor: Float = ((parameters.customParameters[CUST_CPM_FLR] ?? "0") as! NSString).floatValue
-        
-        // Create if not already done so
-        if self.interstitial == nil {
-            self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
-        }
-        
-        // Load ad with new data
-        if self.interstitial != nil {
-            DispatchQueue.main.async {
-                self.interstitial!.loadAd(isInterstitial: true, cpmFloor:cpmFloor, placementId: placementId)
+        public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+            //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
+            
+            // We use this value to trigger AppLovin callbacks
+            self.interstitialDelegate = delegate
+            
+            // Get values from AppLovin and custom parameters
+            let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
+            var appId: String? = ""
+            var cpmFloor: Float = 0
+            
+            // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
+            let rawAppIdParam = parameters.customParameters[CUST_APP_ID]
+            if(rawAppIdParam != nil) {
+                if let rawString = rawAppIdParam as? String {
+                    appId = rawString
+                    TempoUtils.Say(msg: "✅ customParameters[\(CUST_APP_ID)] is valid: \(appId ?? "")")
+                } else {
+                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is not a String")
+                }
+            } else {
+                TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is nil")
             }
-        } else {
-            self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
+            
+            // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
+            let rawCpmFlrParam = parameters.customParameters[CUST_CPM_FLR]
+            if(rawCpmFlrParam != nil)
+            {
+                //cpmFloor = (rawCpmFlrParam as! NSString).floatValue
+                if let rawString = rawCpmFlrParam as? NSString {
+                    if let floatValue = Float(rawString as Substring) {
+                        cpmFloor = floatValue
+                        TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(cpmFloor)")
+                    } else {
+                        TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
+                    }
+                } else {
+                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
+                }
+            }
+            else
+            {
+                TempoUtils.Say(msg: "❌ customParameters[\(CUST_CPM_FLR)] is nil")
+            }
+        
+            TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=(\(cpmFloor), PlacementID=(\(placementId ?? "<placementId?>")")
+            
+            // Create if not already done so
+            if self.interstitial == nil {
+                self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
+            }
+            
+            // Load ad with new data
+            if self.interstitial != nil {
+                DispatchQueue.main.async {
+                    self.interstitial!.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+                }
+            } else {
+                self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
+            }
         }
-    }
     
     /// Function used by AppLovin SDK when selecting to play a loaded  INTERSTITIAL ad
     public func showInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
@@ -79,13 +116,51 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     /// Function used by AppLovin SDK when loading an REWARDED ad
     public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
-        TempoUtils.Say(msg: "\(parameters.customParameters)")
+        TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
+        
         self.rewardedDelegate = delegate
         
         // Get values from AppLovin and custom parameters
         let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
-        let appId: String = parameters.customParameters[CUST_APP_ID] as! String
-        let cpmFloor: Float = ((parameters.customParameters[CUST_CPM_FLR] ?? "0") as! NSString).floatValue
+        var appId: String? = ""
+        var cpmFloor: Float = 0
+        
+        // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
+        let rawAppIdParam = parameters.customParameters[CUST_APP_ID]
+        if(rawAppIdParam != nil) {
+            if let rawString = rawAppIdParam as? String {
+                appId = rawString
+                TempoUtils.Say(msg: "✅ customParameters[\(CUST_APP_ID)] is valid: \(appId ?? "")")
+            } else {
+                TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is not a String")
+            }
+        } else {
+            TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is nil")
+        }
+        
+        // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
+        let rawCpmFlrParam = parameters.customParameters[CUST_CPM_FLR]
+        if(rawCpmFlrParam != nil)
+        {
+            //cpmFloor = (rawCpmFlrParam as! NSString).floatValue
+            if let rawString = rawCpmFlrParam as? NSString {
+                if let floatValue = Float(rawString as Substring) {
+                    cpmFloor = floatValue
+                    TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(cpmFloor)")
+                } else {
+                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
+                }
+            } else {
+                TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
+            }
+        }
+        else
+        {
+            TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is nil")
+        }
+    
+        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
+        
         
         // Create if not already done so
         if self.rewarded == nil {
