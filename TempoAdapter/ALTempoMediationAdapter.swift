@@ -86,7 +86,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
                 TempoUtils.Say(msg: "❌ customParameters[\(CUST_CPM_FLR)] is nil")
             }
         
-            TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=(\(cpmFloor), PlacementID=(\(placementId ?? "<placementId?>")")
+            TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
             
             // Create if not already done so
             if self.interstitial == nil {
