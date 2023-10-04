@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
 
   spec.source_files = 'TempoAdapter/*.*'
 
-  spec.dependency 'TempoSDK', '1.2.6-rc.0'
+  spec.dependency 'TempoSDK', '1.3.0'
   spec.dependency 'AppLovinSDK'
   spec.requires_arc     = true
   spec.frameworks       = 'Foundation', 'UIKit'

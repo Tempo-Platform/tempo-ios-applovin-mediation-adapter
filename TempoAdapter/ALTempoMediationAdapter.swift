@@ -55,39 +55,9 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
         
         appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
-        //            let rawAppIdParam = parameters.customParameters[CUST_APP_ID]
-        //            if(rawAppIdParam != nil) {
-        //                if let rawString = rawAppIdParam as? String {
-        //                    appId = rawString
-        //                    TempoUtils.Say(msg: "✅ customParameters[\(CUST_APP_ID)] is valid: \(appId ?? "")")
-        //                } else {
-        //                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is not a String")
-        //                }
-        //            } else {
-        //                TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is nil")
-        //            }
         
         // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
         cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
-        //            let rawCpmFlrParam = parameters.customParameters[CUST_CPM_FLR]
-        //            if(rawCpmFlrParam != nil)
-        //            {
-        //                //cpmFloor = (rawCpmFlrParam as! NSString).floatValue
-        //                if let rawString = rawCpmFlrParam as? NSString {
-        //                    if let floatValue = Float(rawString as Substring) {
-        //                        cpmFloor = floatValue
-        //                        TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(cpmFloor)")
-        //                    } else {
-        //                        TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
-        //                    }
-        //                } else {
-        //                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
-        //                }
-        //            }
-        //            else
-        //            {
-        //                TempoUtils.Say(msg: "❌ customParameters[\(CUST_CPM_FLR)] is nil")
-        //            }
         
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
         
@@ -176,42 +146,9 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
         appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
         
-//        
-//        let rawAppIdParam = parameters.customParameters[CUST_APP_ID]
-//        if(rawAppIdParam != nil) {
-//            if let rawString = rawAppIdParam as? String {
-//                appId = rawString
-//                TempoUtils.Say(msg: "✅ customParameters[\(CUST_APP_ID)] is valid: \(appId ?? "")")
-//            } else {
-//                TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is not a String")
-//            }
-//        } else {
-//            TempoUtils.Say(msg:"❌ customParameters[\(CUST_APP_ID)] is nil")
-//        }
-        
         // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
         cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
-//        let rawCpmFlrParam = parameters.customParameters[CUST_CPM_FLR]
-//        if(rawCpmFlrParam != nil)
-//        {
-//            //cpmFloor = (rawCpmFlrParam as! NSString).floatValue
-//            if let rawString = rawCpmFlrParam as? NSString {
-//                if let floatValue = Float(rawString as Substring) {
-//                    cpmFloor = floatValue
-//                    TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(cpmFloor)")
-//                } else {
-//                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
-//                }
-//            } else {
-//                TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
-//            }
-//        }
-//        else
-//        {
-//            TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is nil")
-//        }
-    
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
         
         // Create if not already done so
