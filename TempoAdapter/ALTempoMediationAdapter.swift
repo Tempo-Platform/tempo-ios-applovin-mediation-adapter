@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.3.1"
+    let TEMPO_ADAPTER_VERSION: String = "1.3.1-rc.0"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -40,6 +40,49 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         TempoDataBackup.initCheck()
     }
     
+    /// Validates parameter String values
+    func getParameterString(paramKey: String, alParams: MAAdapterResponseParameters) -> String {
+        var returningString = ""
+        let stringParam = alParams.customParameters[paramKey]
+        if(stringParam != nil) {
+            if let rawString = stringParam as? String {
+                returningString = rawString
+                TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(returningString ?? "")")
+            } else {
+                TempoUtils.Say(msg:"❌ customParameters[\(paramKey)] is not a String")
+            }
+        } else {
+            TempoUtils.Say(msg:"❌ customParameters[\(paramKey)] is nil")
+        }
+        
+        return returningString
+    }
+    
+    /// Validates parameter Float values
+    func getParameterAsFloat(paramKey: String, alParams: MAAdapterResponseParameters) -> Float {
+        let rawParam = alParams.customParameters[CUST_CPM_FLR]
+        var returningFloat: Float = 0
+        if(rawParam != nil)
+        {
+            if let rawString = rawParam as? NSString {
+                if let floatValue = Float(rawString as Substring) {
+                    returningFloat = floatValue
+                    TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(returningFloat)")
+                } else {
+                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
+                }
+            } else {
+                TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
+            }
+        }
+        else
+        {
+            TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is nil")
+        }
+        
+        return returningFloat
+    }
+    
     /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
         //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
@@ -53,7 +96,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         var cpmFloor: Float = 0
         
         // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
-        
         appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
         
         // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
@@ -86,56 +128,12 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
         self.interstitial!.showAd(parentViewController: getTopVC(parameters: parameters))
     }
-    
-    func getParameterString(paramKey: String, alParams: MAAdapterResponseParameters) -> String {
-        var returningString = ""
-        let stringParam = alParams.customParameters[paramKey]
-        if(stringParam != nil) {
-            if let rawString = stringParam as? String {
-                returningString = rawString
-                TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(returningString ?? "")")
-            } else {
-                TempoUtils.Say(msg:"❌ customParameters[\(paramKey)] is not a String")
-            }
-        } else {
-            TempoUtils.Say(msg:"❌ customParameters[\(paramKey)] is nil")
-        }
-        
-        return returningString
-    }
-    
-    
-    func getParameterAsFloat(paramKey: String, alParams: MAAdapterResponseParameters) -> Float {
-        let rawParam = alParams.customParameters[CUST_CPM_FLR]
-        var returningFloat: Float = 0
-        if(rawParam != nil)
-        {
-            if let rawString = rawParam as? NSString {
-                if let floatValue = Float(rawString as Substring) {
-                    returningFloat = floatValue
-                    TempoUtils.Say(msg:"✅ customParameters[\(CUST_CPM_FLR)] is valid: \(returningFloat)")
-                } else {
-                    TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] Substring does not cast to a Float")
-                }
-            } else {
-                TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is String")
-            }
-        }
-        else
-        {
-            TempoUtils.Say(msg:"❌ customParameters[\(CUST_CPM_FLR)] is nil")
-        }
-        
-        return returningFloat
-    }
-    
-    
-    
-    
+   
     /// Function used by AppLovin SDK when loading an REWARDED ad
     public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
-        TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
+        //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
         
+        // We use this value to trigger AppLovin callbacks
         self.rewardedDelegate = delegate
         
         // Get values from AppLovin and custom parameters
@@ -188,7 +186,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     }
     
-    
     /// AppLovin overrides
     public override var sdkVersion : String {
         return Constants.SDK_VERSIONS
@@ -207,7 +204,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             isRewardedReady = true
         }
     }
-    public func onTempoAdFetchFailed(isInterstitial: Bool) {
+    public func onTempoAdFetchFailed(isInterstitial: Bool, reason: String?) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.unspecified)
         } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
@@ -242,6 +239,15 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.rewardedDelegate?.didClickRewardedAd()
         }
     }
+    
+    public func onTempoAdShowFailed(isInterstitial: Bool, reason: String?) {
+        if (isInterstitial && (self.interstitialDelegate != nil)) {
+            self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.internalError)
+        } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
+            self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.internalError)
+        }
+    }
+    
     public func getTempoAdapterVersion() -> String? {
         return TEMPO_ADAPTER_VERSION
     }
