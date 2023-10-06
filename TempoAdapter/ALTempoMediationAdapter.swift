@@ -6,6 +6,8 @@ import AppLovinSDK
 @objc(ALTempoMediationAdapter)
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
+    
+
     let ADAPTER_TYPE: String = "APPLOVIN"
     let TEMPO_ADAPTER_VERSION: String = "1.3.1"
     let CUST_CPM_FLR = "cpm_floor"
@@ -242,6 +244,26 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.rewardedDelegate?.didClickRewardedAd()
         }
     }
+    
+    public func onTempoAdShowFailed(isInterstitial: Bool, adNotReady: Bool) {
+        if (isInterstitial && (self.interstitialDelegate != nil)) {
+            if(adNotReady){
+                self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
+            }
+            else {
+                self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adDisplayFailedError)
+            }
+        } else if (!isInterstitial && (self.rewardedDelegate != nil)) {
+            if(adNotReady){
+                self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
+            }
+            else {
+                self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adDisplayFailedError)
+            }
+            self.rewardedDelegate?.didClickRewardedAd()
+        }
+    }
+    
     public func getTempoAdapterVersion() -> String? {
         return TEMPO_ADAPTER_VERSION
     }
