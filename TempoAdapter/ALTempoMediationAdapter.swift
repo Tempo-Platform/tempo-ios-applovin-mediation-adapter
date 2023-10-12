@@ -60,30 +60,61 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
         
-        // Create if not already done so
+//        // Create if not already done so
+//        if self.interstitial == nil {
+//            self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
+//            if self.interstitial != nil {
+//                self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+//            } else {
+//                self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
+//            }
+//        } else {
+//            DispatchQueue.main.async {
+//                self.interstitial!.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+//            }
+//        }
+        
         if self.interstitial == nil {
             self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
-            if self.interstitial != nil {
-                self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-            } else {
+            
+            if self.interstitial == nil {
                 self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.interstitial!.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+                return
             }
         }
+        
+        // Load ad, provided the ad controller is not null
+        self.interstitial?.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+        //self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+        
+        
     }
     
     /// Function used by AppLovin SDK when selecting to play a loaded  INTERSTITIAL ad
     public func showInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+        
+        // Set AL delegate
         self.interstitialDelegate = delegate
-        if (!isInterstitialReady) {
+        
+//        if (!isInterstitialReady) {
+//            self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
+//            return
+//        }
+//
+//        self.interstitial!.showAd(parentViewController: getTopVC(parameters: parameters))
+        
+        // Send ad not ready error if needed
+        guard isInterstitialReady else {
             self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
             return
         }
 
-        self.interstitial!.showAd(parentViewController: getTopVC(parameters: parameters))
+        // Checks that parent/base ViewController is valid and then shows ad
+        if let topVC = getTopVC(parameters: parameters) {
+            self.interstitial?.showAd(parentViewController: topVC)
+        } else {
+            self.onTempoAdShowFailed(isInterstitial: true, reason: "Could not get a parent ViewController")
+        }
     }
    
     /// Function used by AppLovin SDK when loading an REWARDED ad
@@ -107,29 +138,58 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
         
         // Create if not already done so
+//        if self.rewarded == nil {
+//            self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
+//            if self.rewarded != nil {
+//                self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
+//            } else {
+//                self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
+//            }
+//        } else {
+//            DispatchQueue.main.async {
+//                self.rewarded!.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
+//            }
+//        }
+        
         if self.rewarded == nil {
             self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
-            if self.rewarded != nil {
-                self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-            } else {
+            
+            if self.rewarded == nil {
                 self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.rewarded!.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
+                return
             }
         }
+        
+        // Load ad, provided the ad controller is not null
+        self.rewarded?.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
+        //self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
     }
     
     /// Function used by AppLovin SDK when selecting to play a loaded REWARDED ad
     public func showRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
+
+        // Set AL delegate
         self.rewardedDelegate = delegate
-        if (!isRewardedReady) {
+        
+//        if (!isRewardedReady) {
+//            self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
+//            return
+//        }
+//        
+//        self.rewarded!.showAd(parentViewController: getTopVC(parameters: parameters))
+        
+        // Send ad not ready error if needed
+        guard isRewardedReady else {
             self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
             return
         }
-        
-        self.rewarded!.showAd(parentViewController: getTopVC(parameters: parameters))
+
+        // Checks that parent/base ViewController is valid and then shows ad
+        if let topVC = getTopVC(parameters: parameters) {
+            self.rewarded?.showAd(parentViewController: topVC)
+        } else {
+            self.onTempoAdShowFailed(isInterstitial: false, reason: "Could not get a parent ViewController")
+        }
     }
     
     /// Validates parameter String values
