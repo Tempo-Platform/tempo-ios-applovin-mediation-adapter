@@ -22,6 +22,7 @@
 /* Begin PBXBuildFile section */
 		04AA3111168C897854124DC002430340 /* NSNumber+ADJAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 15A4BC7B34B26686667F400B56AF8F58 /* NSNumber+ADJAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0588565FDD0608AB09B9862A752255A2 /* ADJBackoffStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBE16AC005B8D2E13C813A00F70F31E /* ADJBackoffStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09783BEB98A0B3FFFB13BFB2E9FEF863 /* TempoUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DBB41900377EB30916425ED7116C7 /* TempoUserInfo.swift */; };
 		0A2BA4B548700A0686F45B8ABE56A65F /* ADJAttributionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 457AA8B87F09A283E2D731AAE8B2CD4A /* ADJAttributionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0FC9882FA6E0F8786D5EF50C43CB595D /* NSString+ADJAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BECEDAAE5790C7274F7D2A07AD9F7A68 /* NSString+ADJAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12B6FDE4274B426CDBCA31BF3D7F57E9 /* NSData+ADJAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD1B06F8A757F43197250BC9AFBFE56 /* NSData+ADJAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,10 +31,10 @@
 		166047A5C6986257A500F0383E53CC46 /* ADJPurchaseVerificationResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FBD10226FAFE39F81DB300F27E517 /* ADJPurchaseVerificationResult.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1833B5A8F3AA52D1FE6D25794E1D915C /* ADJLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 89C82BD81D1C32F36B5C63A158F1E326 /* ADJLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18E7392443FF0EC09360B3C14CD78A95 /* ADJResponseData.h in Headers */ = {isa = PBXBuildFile; fileRef = 8366999828EC415ED5142CED53422509 /* ADJResponseData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A31D0D01B1F0E919328A9077D86D12B /* TempoDataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5CEACFDC68337B17ECD728E3F4AEB5 /* TempoDataBackup.swift */; };
 		1B05AD3CD1E1F1F5AFDDE6FD579DD5E2 /* ADJAdjustFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 82156111418311D61C59226E1C15FD39 /* ADJAdjustFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D3A329D662922760D4B41C2D4B06AEA /* ADJConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 597B4DEF448035837F2C07E8097B7B53 /* ADJConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D7A6194475B43CEEBB8714EC4260992 /* ADJSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E2671C14CDF1D4E6019628A472A709 /* ADJSubscription.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1FBA247F531E4DAF9A90DA24CAEF024E /* TempoDataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B67C9804543D12754236BDE9C37BC /* TempoDataBackup.swift */; };
 		21CE2E404B6A352087C441B857609A2D /* ADJLinkResolution.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA11DA28274944DAFA9C87D2755A656 /* ADJLinkResolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24E3D95AE804455373D86CC93E0B0D89 /* ADJPackageBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ABDF4BA606718288D8DA08B7C4031F /* ADJPackageBuilder.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		26F90091FAA5C540CC068D8345F4194F /* ADJPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = BB604C6F9107A07B7F91A0387C99BFEA /* ADJPurchase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -41,13 +42,13 @@
 		2726912EC51484B421D3A71711C97715 /* ADJThirdPartySharing.h in Headers */ = {isa = PBXBuildFile; fileRef = 051135C7FD4349AC03E2583D6A5E106E /* ADJThirdPartySharing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		297CDEE4767693E636D48794B64B7A8D /* ADJResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C8A47602E72AA9172CC15545F7B44 /* ADJResponseData.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		29B56F35148B335CC16991511EA753DA /* Adjust-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF11C06699AD60C72D554606DE2E5D29 /* Adjust-dummy.m */; };
+		2CAA59022A99F29DF248911C73FE0F6E /* TempoSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A767F53DCDB6DE68711741BD94C40E6F /* TempoSDK-dummy.m */; };
+		2CE1FF6A5285D5B4E56B75E3AAD9E8BB /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE33D3D6426484038AAF969D09A2CE3 /* Metrics.swift */; };
 		32ED070FF43EEB2358C8DD4F6C82195E /* ADJAdRevenue.h in Headers */ = {isa = PBXBuildFile; fileRef = C4DF1A1DE32FF1D994FF5934C91B349F /* ADJAdRevenue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3359BEF8EDAB0095FC83C0DDB456D430 /* ADJActivityPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = E6BB170B07E6ECF10496475907BAF685 /* ADJActivityPackage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		33AF0DA8B92054123102B83CCBCF6594 /* ADJSKAdNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C53A0FE53C8C5C8C0C36C2BE906575 /* ADJSKAdNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		33E591D6B49574A89F9826434BD78F37 /* ADJUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E985C4680E8E59A4F2D28196AFDA21A9 /* ADJUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3A2A71163A2200B3175A82F849E44187 /* TempoUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE20648C0DA427B0691AC4EC9776A10 /* TempoUserInfo.swift */; };
 		3BBFC1119116E41A710C8A4ADAE0D3E2 /* Adjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 269E4F9666257A53FFE5FD3132665F6E /* Adjust.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3DF0C34B099527360E8C530F0A05CF20 /* TempoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907A784CB896F2DB023E8E4529A74236 /* TempoUtils.swift */; };
 		3E2693C4F139E8D62E4F4C477B868A20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30453446C5310EA114B978294858C9A5 /* Foundation.framework */; };
 		3FEECA817664550D15CF630EE0E9176E /* ADJSessionSuccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D7F3C11E6C32D3372EEAC10297C465 /* ADJSessionSuccess.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		434C29AD588BB14BB5F2CDA2438F12ED /* ADJTimerCycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F4538B76B77B0C3F40D2B1E05E8134B /* ADJTimerCycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,28 +64,27 @@
 		5F3720BDD506D22673FE31F37564D7B5 /* ADJConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A9CE789501A0957DD412C13B4979C /* ADJConfig.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5F69FC89120F7FA30AC536C9C2595434 /* Adjust.h in Headers */ = {isa = PBXBuildFile; fileRef = D756CFBB7442D40E092B04E09019B9AD /* Adjust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6075FE09EF43F151157F459188FA41AF /* NSString+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1061E6840A72AF59A764486434918D79 /* NSString+ADJAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		623B39E5D65C17549226F6105DFF2EC7 /* TempoAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EC0F115735DDE071ECF773093CD1BF /* TempoAdView.swift */; };
-		627230F23D00EEFC6F30AFC563B5D826 /* TempoAdListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BB2727ACE18BF616EAC0CD98F3B415 /* TempoAdListener.swift */; };
 		627352492E59C5575DE1B19E834A9B1A /* ADJSessionFailure.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE63B124FF9F564BC6BE6306D92B852 /* ADJSessionFailure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6288B6F014C8CA0C2D95917126D937A5 /* ADJPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D68FD423F6B2F5D5D917940F71481BF /* ADJPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63B1C4B54ECA300475E55A06E32D4531 /* ADJActivityState.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A27BAFD6F2CA8DC6EE88EC07CFC5C4 /* ADJActivityState.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		663D1A26961EC383C4C2A6152AA07AA5 /* Adjust-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D5B7AAB244B2395148C31371C98E43 /* Adjust-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66DB549F6626E260B45AAE456D767C44 /* ADJEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4A60EEC3A1A674D886E1DCC3D8C73F /* ADJEvent.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		675081DA7D6F4D1357D11B304FA6A258 /* TempoSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F49B79B6C9E9077945CDF231222804 /* TempoSDK-dummy.m */; };
 		68F87915084B9B0B19BAF6B428F44E94 /* ADJSessionParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = CC66E369DC08C69CD6488BDEB43F85B1 /* ADJSessionParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69103192913583180EE02FC8C7BAE6A5 /* ADJSdkClickHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB98D592C51BE2DBF5C01F0578B682 /* ADJSdkClickHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6BF7035EC954DBC7BD469352571A2DE3 /* ADJPurchaseVerificationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 256074262AE4D7A7E468D6CEF11F4AE1 /* ADJPurchaseVerificationResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D16FEE90030182B2067EF28CC693BDA /* NSData+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5528EBE928C6FEB13B3F2F2AF3415C3F /* NSData+ADJAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7061967659ACCD1E7A2D9EC4A2E1BAF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584E0F0F479D85BBAA8D698D5D504509 /* Constants.swift */; };
 		76612D343B70F8D8DA77E4B35786F8D8 /* ADJActivityPackage.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4BACF0D42785E8C1162B460138999 /* ADJActivityPackage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BA724BF0601A3A9B52ECDC840F637C7 /* ADJPackageParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B5BC09B44ED67855870A8F70D641FE8 /* ADJPackageParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7BCF8A4835EE5AB53B88AC5736351442 /* ADJActivityKind.m in Sources */ = {isa = PBXBuildFile; fileRef = 26113F40E8110CA35D1A291A07DEE654 /* ADJActivityKind.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7FBCF9FD2AB5D1255FE6DC7C99916434 /* TempoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE422CF894EA65F974C0F86B30ECC0A0 /* TempoProfile.swift */; };
 		83896128CDD8E5B469BC393178D6971D /* ADJEventSuccess.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E68611F95487CD2C5BA190B50FA620 /* ADJEventSuccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8668149A8D18DA610D30584978CB2EB3 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BE28A79F5BB4EBD9A4B42A1F080D6F /* Metrics.swift */; };
 		89E5771342F1D303CBF746157C4FF7C8 /* ADJLinkResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EFC2FE42631AFA6E7E2F53D575824D /* ADJLinkResolution.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8A7A20352B2835F197E9B70258EF6D01 /* ADJEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = C8519AC614309E9B9FF79D176DEC6CC2 /* ADJEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9187A31EF9B466985599875FB3339CEF /* TempoSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 150CBB68412E783C320FFF9D210C58CD /* TempoSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9187A31EF9B466985599875FB3339CEF /* TempoSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FF719CB49CBE0A02E2580C8C07434E3 /* TempoSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9249C28CBA82EE55B2725AC2CAA44764 /* ALTempoMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD85D8A0D16B4B17940546269A304CF3 /* ALTempoMediationAdapter.swift */; };
 		9311EA80DC797EEF3C868AAB29A67827 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30453446C5310EA114B978294858C9A5 /* Foundation.framework */; };
+		93FF171BAE1D54619E92628873CEF97D /* TempoAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C194963AA4AEF963F76D89235BB8B8 /* TempoAdView.swift */; };
 		950899AFE1B43D0ED66CB828A00CCC15 /* ADJPurchaseVerificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D191058B85E8B4CCBF7AF55DAFDFB /* ADJPurchaseVerificationHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		99B03BBEE0BE590BC884EDEDF2554B54 /* ADJSessionParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BE7103F38008403D20F5FA9FB96827 /* ADJSessionParameters.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9BE806993FEE9B37F969B3CFAE8A1E19 /* ADJSdkClickHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F094FEBBF09E29039BF2F8D9F985C66E /* ADJSdkClickHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,19 +95,20 @@
 		A96BB5D6D1CBBDBAA3749D20DB6F4510 /* ADJPurchaseVerificationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = E3FF82A9994CA4CE019A7444A48AE2E4 /* ADJPurchaseVerificationHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC17A6EAB351DC067DF9BB525B72AFEB /* ADJRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 893C1EB50457EC8D73F7D86214ACC317 /* ADJRequestHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACB19512DABE75F2D4057FEEE3C83F67 /* ADJPackageParams.m in Sources */ = {isa = PBXBuildFile; fileRef = A14D7A13FF6EBEC8836677E464485A88 /* ADJPackageParams.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AD8E59C069DA58385793B0826D17FB99 /* TempoAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8311AC6D40C82A18840FDE5E1FE8F93 /* TempoAdController.swift */; };
 		ADD3DC1B8F017476F37CB17BA43D8BFE /* ADJAttributionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 522B28103E59C251FEB339579173CADC /* ADJAttributionHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AEC55C1D394D2D28DB22EFC28CEB3FBE /* ADJAttribution.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F2A37EFFDECAE8DD94FD70AA0D3969 /* ADJAttribution.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFBE292B5B274F0518696AC5973B8337 /* TempoAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81428408A9BA0543D371783B7BE7C904 /* TempoAdController.swift */; };
+		B01CF44525E6842AF3C54102BF9A824E /* TempoAdListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AF18E294D09628163110B685395325 /* TempoAdListener.swift */; };
+		B837CEF165AA6DD8A4D15B988BDE9657 /* TempoUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7173344422EA2A3C52731F1A84CD566A /* TempoUtils.swift */; };
 		BB54B2BEFAA470782D7302AF10F89006 /* ADJAttribution.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C50ECC05BA9BCD30010DEED8D56078 /* ADJAttribution.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BB735398D89A08D5223154C4D6885D12 /* TempoTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C394BD55568A0208BB2FC74BA2B65EA /* TempoTesting.swift */; };
 		C11438D6B17CC18B44062D69695E28FA /* ADJAdRevenue.m in Sources */ = {isa = PBXBuildFile; fileRef = 9199E06075FD5FEEBA91CC14132E4197 /* ADJAdRevenue.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C9D8EC08D4055D973B09ED608BF45DB6 /* ADJThirdPartySharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 23AE9CEB7D32E7B51301292B379AC472 /* ADJThirdPartySharing.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CBBA688A7001CD62F34E16F19B5F2B4D /* TempoTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11CA25EBEF1FD2ACB0B066C1505381C /* TempoTesting.swift */; };
 		CBE252A4759F9D1D200F78A5AA837FE6 /* ADJTimerCycle.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B90429F2787920F58037BBAAF38DCC /* ADJTimerCycle.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CC0FE718B5A29BB6429A238543A8B339 /* ADJSessionSuccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 04AF51655523E29EAF1958C65FA93314 /* ADJSessionSuccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC1738BFCACDCB71D0E54AD09E540E6B /* ADJActivityState.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7A6C384309D3ADE6F3384CD36A41FF /* ADJActivityState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEB63316A80E8ECE753FF27EEB3DF6E1 /* ADJSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 559472E46AD7DD0AE27277B8585C1E36 /* ADJSubscription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1B54F626630247E7264FB835D6C176E /* ADJPackageBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = D094613DB9DE3C3F5E05E09A847D47AC /* ADJPackageBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0200620AA4F0FA6C9A6D6A2CE1BCBD0 /* TempoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F054FBC6056A25507F9DAE9BA1C4B4 /* TempoLocation.swift */; };
 		E02C51849A620B816D6DDB0A471CCC89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30453446C5310EA114B978294858C9A5 /* Foundation.framework */; };
 		E030EB1902D9741323737C4E65E5B4A9 /* ADJSKAdNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = BC17FFD89ACB4ABE995004EC9D76F6CC /* ADJSKAdNetwork.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E19081BA7EB8D320E244BBE4ECCF8781 /* ADJEventFailure.m in Sources */ = {isa = PBXBuildFile; fileRef = 30442DECA33F6C5DB8CDFAE26BA411BC /* ADJEventFailure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -116,7 +117,6 @@
 		E79E4E591191D34C79572133CAEE11A8 /* ADJUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 03131F9429BB1229CCD21614036F307D /* ADJUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E82CA00C8F72CB27F7A6566F3CBA518E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DE96DC511BD1CE643E8E9A8CE72374 /* SystemConfiguration.framework */; };
 		F28BD272BE2A70A926A59C46C9DE91E5 /* ADJTimerOnce.h in Headers */ = {isa = PBXBuildFile; fileRef = 65545F489176E11E9C03F4D1C108EB4C /* ADJTimerOnce.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F44514631D96DEEF25C3B4E602985259 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02F3A12B45CF535D5BA9A59D479977 /* Constants.swift */; };
 		F896F5C3D1CF1F1E276CB395E6007BC2 /* ADJUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = EA723F63B6812A91A06F78151C674B19 /* ADJUserDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F90A14D82E2B2743A554C3AAE296DF05 /* NSNumber+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 542A124406F65328F8143084F034F53E /* NSNumber+ADJAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FB40C89B613D7C7AE33B6CA73C9B0867 /* ADJPackageHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B9B62F023166E2E19AB6929F5E06F6E /* ADJPackageHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -175,16 +175,17 @@
 		04AF51655523E29EAF1958C65FA93314 /* ADJSessionSuccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSessionSuccess.h; path = Adjust/ADJSessionSuccess.h; sourceTree = "<group>"; };
 		051135C7FD4349AC03E2583D6A5E106E /* ADJThirdPartySharing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJThirdPartySharing.h; path = Adjust/ADJThirdPartySharing.h; sourceTree = "<group>"; };
 		08546EAFC7BB219C0D759C195D4A2ED7 /* tempo-applovin-mediation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-umbrella.h"; sourceTree = "<group>"; };
-		0D7B391AA6D0B7F33E38A2E54F50170D /* TempoSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TempoSDK.modulemap; sourceTree = "<group>"; };
+		0FF719CB49CBE0A02E2580C8C07434E3 /* TempoSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TempoSDK-umbrella.h"; sourceTree = "<group>"; };
 		1061E6840A72AF59A764486434918D79 /* NSString+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSString+ADJAdditions.m"; sourceTree = "<group>"; };
-		150CBB68412E783C320FFF9D210C58CD /* TempoSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TempoSDK-umbrella.h"; sourceTree = "<group>"; };
+		111553BEC752A3D5A71CDC5BA91B97BE /* TempoSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TempoSDK.release.xcconfig; sourceTree = "<group>"; };
 		15A4BC7B34B26686667F400B56AF8F58 /* NSNumber+ADJAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+ADJAdditions.h"; path = "Adjust/ADJAdditions/NSNumber+ADJAdditions.h"; sourceTree = "<group>"; };
 		1720B385E02A0FEEDFC59DCD39525634 /* Pods-AppLovin MAX Demo App - Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppLovin MAX Demo App - Swift.modulemap"; sourceTree = "<group>"; };
 		17DE41F99F7872BEB729B757D2C9A219 /* ADJActivityHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJActivityHandler.m; path = Adjust/ADJActivityHandler.m; sourceTree = "<group>"; };
 		18DE96DC511BD1CE643E8E9A8CE72374 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		1901465BAAB58240A1017776F838EF50 /* ADJLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJLogger.m; path = Adjust/ADJLogger.m; sourceTree = "<group>"; };
-		19F48B611D00CEA5E39A1AA9EC8558FA /* TempoSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TempoSDK.debug.xcconfig; sourceTree = "<group>"; };
+		19C194963AA4AEF963F76D89235BB8B8 /* TempoAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdView.swift; path = TempoSDK/TempoAdView.swift; sourceTree = "<group>"; };
 		1F9B4D99CD39BFD5481EFC6368A5442C /* ADJRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJRequestHandler.m; path = Adjust/ADJRequestHandler.m; sourceTree = "<group>"; };
+		21EA22105B5337A50CCA0A914AE28877 /* TempoSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TempoSDK.debug.xcconfig; sourceTree = "<group>"; };
 		23AE9CEB7D32E7B51301292B379AC472 /* ADJThirdPartySharing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJThirdPartySharing.m; path = Adjust/ADJThirdPartySharing.m; sourceTree = "<group>"; };
 		240FE56A8C74D5AF78BCDD941C390997 /* Pods-AppLovin MAX Demo App - Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppLovin MAX Demo App - Swift-umbrella.h"; sourceTree = "<group>"; };
 		2474724040FAA051646A846423509EF4 /* AppLovinSDKResources.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AppLovinSDKResources.bundle; path = "applovin-ios-sdk-11.11.3/AppLovinSDKResources.bundle"; sourceTree = "<group>"; };
@@ -196,75 +197,76 @@
 		2B5BC09B44ED67855870A8F70D641FE8 /* ADJPackageParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageParams.h; path = Adjust/ADJPackageParams.h; sourceTree = "<group>"; };
 		2B9B62F023166E2E19AB6929F5E06F6E /* ADJPackageHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageHandler.h; path = Adjust/ADJPackageHandler.h; sourceTree = "<group>"; };
 		2C0A9CE789501A0957DD412C13B4979C /* ADJConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJConfig.m; path = Adjust/ADJConfig.m; sourceTree = "<group>"; };
-		2DF7AC13835252B0148BD53C13A8A371 /* TempoSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TempoSDK-Info.plist"; sourceTree = "<group>"; };
 		30442DECA33F6C5DB8CDFAE26BA411BC /* ADJEventFailure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJEventFailure.m; path = Adjust/ADJEventFailure.m; sourceTree = "<group>"; };
 		30453446C5310EA114B978294858C9A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		30BE7103F38008403D20F5FA9FB96827 /* ADJSessionParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionParameters.m; path = Adjust/ADJSessionParameters.m; sourceTree = "<group>"; };
 		3553D45E6E26361FA8F6FBA092443DA5 /* ADJUrlStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJUrlStrategy.m; path = Adjust/ADJUrlStrategy.m; sourceTree = "<group>"; };
 		3733829EFCAB6BA9CFB1BBC708FC7EC5 /* ADJActivityKind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityKind.h; path = Adjust/ADJActivityKind.h; sourceTree = "<group>"; };
-		37F49B79B6C9E9077945CDF231222804 /* TempoSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TempoSDK-dummy.m"; sourceTree = "<group>"; };
 		39D7F3C11E6C32D3372EEAC10297C465 /* ADJSessionSuccess.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionSuccess.m; path = Adjust/ADJSessionSuccess.m; sourceTree = "<group>"; };
 		3A3C8A47602E72AA9172CC15545F7B44 /* ADJResponseData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJResponseData.m; path = Adjust/ADJResponseData.m; sourceTree = "<group>"; };
 		3D0FBD10226FAFE39F81DB300F27E517 /* ADJPurchaseVerificationResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchaseVerificationResult.m; path = Adjust/ADJPurchaseVerificationResult.m; sourceTree = "<group>"; };
 		3D68FD423F6B2F5D5D917940F71481BF /* ADJPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPurchase.h; path = Adjust/ADJPurchase.h; sourceTree = "<group>"; };
-		3F8B67C9804543D12754236BDE9C37BC /* TempoDataBackup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoDataBackup.swift; path = TempoSDK/TempoDataBackup.swift; sourceTree = "<group>"; };
+		3D6CD4323FC0E3E62CE8C2B6F530EF14 /* TempoSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TempoSDK.modulemap; sourceTree = "<group>"; };
 		3FBE16AC005B8D2E13C813A00F70F31E /* ADJBackoffStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJBackoffStrategy.h; path = Adjust/ADJBackoffStrategy.h; sourceTree = "<group>"; };
 		43E2671C14CDF1D4E6019628A472A709 /* ADJSubscription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSubscription.m; path = Adjust/ADJSubscription.m; sourceTree = "<group>"; };
 		457AA8B87F09A283E2D731AAE8B2CD4A /* ADJAttributionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAttributionHandler.h; path = Adjust/ADJAttributionHandler.h; sourceTree = "<group>"; };
 		46EC354FA9BA7351E566390E5A95728C /* tempo-applovin-mediation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "tempo-applovin-mediation.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4C3D3B3B779735B76E82930FD811E3D6 /* ADJBackoffStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJBackoffStrategy.m; path = Adjust/ADJBackoffStrategy.m; sourceTree = "<group>"; };
-		4CE20648C0DA427B0691AC4EC9776A10 /* TempoUserInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoUserInfo.swift; path = TempoSDK/TempoUserInfo.swift; sourceTree = "<group>"; };
 		522B28103E59C251FEB339579173CADC /* ADJAttributionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAttributionHandler.m; path = Adjust/ADJAttributionHandler.m; sourceTree = "<group>"; };
 		542A124406F65328F8143084F034F53E /* NSNumber+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSNumber+ADJAdditions.m"; sourceTree = "<group>"; };
 		5528EBE928C6FEB13B3F2F2AF3415C3F /* NSData+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSData+ADJAdditions.m"; sourceTree = "<group>"; };
 		559472E46AD7DD0AE27277B8585C1E36 /* ADJSubscription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSubscription.h; path = Adjust/ADJSubscription.h; sourceTree = "<group>"; };
-		5649913B33A1B76CFF68CF36451C56C0 /* TempoSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TempoSDK-prefix.pch"; sourceTree = "<group>"; };
+		584E0F0F479D85BBAA8D698D5D504509 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TempoSDK/Constants.swift; sourceTree = "<group>"; };
 		597B4DEF448035837F2C07E8097B7B53 /* ADJConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJConfig.h; path = Adjust/ADJConfig.h; sourceTree = "<group>"; };
 		6023B70CBD70F1F4A9F5716C4D0729A7 /* tempo-applovin-mediation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "tempo-applovin-mediation-Info.plist"; sourceTree = "<group>"; };
-		61BB2727ACE18BF616EAC0CD98F3B415 /* TempoAdListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdListener.swift; path = TempoSDK/TempoAdListener.swift; sourceTree = "<group>"; };
 		637DC0DDFDB06EA22C383CC9F1679073 /* ADJUserDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJUserDefaults.m; path = Adjust/ADJUserDefaults.m; sourceTree = "<group>"; };
 		65545F489176E11E9C03F4D1C108EB4C /* ADJTimerOnce.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJTimerOnce.h; path = Adjust/ADJTimerOnce.h; sourceTree = "<group>"; };
 		6C4A60EEC3A1A674D886E1DCC3D8C73F /* ADJEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJEvent.m; path = Adjust/ADJEvent.m; sourceTree = "<group>"; };
 		6E2FD2D799ED39CD1557629D133206D5 /* Pods-AppLovin MAX Demo App - Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AppLovin MAX Demo App - Swift"; path = Pods_AppLovin_MAX_Demo_App___Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0E4EA16FA523A166C59CD7EB8E4C58 /* TempoSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TempoSDK; path = TempoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7173344422EA2A3C52731F1A84CD566A /* TempoUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoUtils.swift; path = TempoSDK/TempoUtils.swift; sourceTree = "<group>"; };
 		72C7827030CD995D2BB829A3DE4C0C6F /* AppLovinSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppLovinSDK.release.xcconfig; sourceTree = "<group>"; };
 		73C53A0FE53C8C5C8C0C36C2BE906575 /* ADJSKAdNetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSKAdNetwork.h; path = Adjust/ADJSKAdNetwork.h; sourceTree = "<group>"; };
 		78AC4DA1B227EE3F2ECD6F272B997F45 /* Adjust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Adjust.debug.xcconfig; sourceTree = "<group>"; };
 		78BCEDF2B7D9EBE73AB2D0E835975CB6 /* Adjust.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Adjust.modulemap; sourceTree = "<group>"; };
-		7AA58744B8683AEE9559041D1B375CE3 /* TempoSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TempoSDK.release.xcconfig; sourceTree = "<group>"; };
 		7DED5B97E79844154DAC79DE4DB534BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7FF5C62DF1E2D492F272FD7D2A1EF4A3 /* Adjust */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Adjust; path = Adjust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81428408A9BA0543D371783B7BE7C904 /* TempoAdController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdController.swift; path = TempoSDK/TempoAdController.swift; sourceTree = "<group>"; };
 		82156111418311D61C59226E1C15FD39 /* ADJAdjustFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAdjustFactory.h; path = Adjust/ADJAdjustFactory.h; sourceTree = "<group>"; };
 		8366999828EC415ED5142CED53422509 /* ADJResponseData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJResponseData.h; path = Adjust/ADJResponseData.h; sourceTree = "<group>"; };
 		849CBA43B94070B9EFC57456C74C0268 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		855621B0744A9D100586C8FDD4BFD814 /* ADJEventSuccess.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJEventSuccess.m; path = Adjust/ADJEventSuccess.m; sourceTree = "<group>"; };
+		8925DDACAD20D9A31BE71DB61A94A54F /* TempoSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TempoSDK-prefix.pch"; sourceTree = "<group>"; };
 		893C1EB50457EC8D73F7D86214ACC317 /* ADJRequestHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJRequestHandler.h; path = Adjust/ADJRequestHandler.h; sourceTree = "<group>"; };
 		89C82BD81D1C32F36B5C63A158F1E326 /* ADJLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJLogger.h; path = Adjust/ADJLogger.h; sourceTree = "<group>"; };
 		8C5FE3BBA7C590F7911362F80908C43F /* AppLovinSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppLovinSDK.debug.xcconfig; sourceTree = "<group>"; };
-		907A784CB896F2DB023E8E4529A74236 /* TempoUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoUtils.swift; path = TempoSDK/TempoUtils.swift; sourceTree = "<group>"; };
 		9199E06075FD5FEEBA91CC14132E4197 /* ADJAdRevenue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAdRevenue.m; path = Adjust/ADJAdRevenue.m; sourceTree = "<group>"; };
 		96C50ECC05BA9BCD30010DEED8D56078 /* ADJAttribution.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAttribution.m; path = Adjust/ADJAttribution.m; sourceTree = "<group>"; };
 		97A320BB5AB8AE112B1DAD111D797472 /* Pods-AppLovin MAX Demo App - Swift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AppLovin MAX Demo App - Swift-acknowledgements.markdown"; sourceTree = "<group>"; };
 		98ABDF4BA606718288D8DA08B7C4031F /* ADJPackageBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPackageBuilder.m; path = Adjust/ADJPackageBuilder.m; sourceTree = "<group>"; };
+		9C394BD55568A0208BB2FC74BA2B65EA /* TempoTesting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoTesting.swift; path = TempoSDK/TempoTesting.swift; sourceTree = "<group>"; };
 		9CA11DA28274944DAFA9C87D2755A656 /* ADJLinkResolution.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJLinkResolution.h; path = Adjust/ADJLinkResolution.h; sourceTree = "<group>"; };
 		9D7CAFB7319B1E16306E771C6BC7CABC /* Pods-AppLovin MAX Demo App - Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppLovin MAX Demo App - Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBBE1487BEB00F56C8983F5316D4615 /* Pods-AppLovin MAX Demo App - Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AppLovin MAX Demo App - Swift.release.xcconfig"; sourceTree = "<group>"; };
 		9F4538B76B77B0C3F40D2B1E05E8134B /* ADJTimerCycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJTimerCycle.h; path = Adjust/ADJTimerCycle.h; sourceTree = "<group>"; };
 		A14D7A13FF6EBEC8836677E464485A88 /* ADJPackageParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPackageParams.m; path = Adjust/ADJPackageParams.m; sourceTree = "<group>"; };
+		A767F53DCDB6DE68711741BD94C40E6F /* TempoSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TempoSDK-dummy.m"; sourceTree = "<group>"; };
+		AA5CEACFDC68337B17ECD728E3F4AEB5 /* TempoDataBackup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoDataBackup.swift; path = TempoSDK/TempoDataBackup.swift; sourceTree = "<group>"; };
 		AC7A6C384309D3ADE6F3384CD36A41FF /* ADJActivityState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityState.h; path = Adjust/ADJActivityState.h; sourceTree = "<group>"; };
+		AE422CF894EA65F974C0F86B30ECC0A0 /* TempoProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoProfile.swift; path = TempoSDK/TempoProfile.swift; sourceTree = "<group>"; };
 		AFE2AA81417AAE39AB0152AA8E79802E /* ADJUrlStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUrlStrategy.h; path = Adjust/ADJUrlStrategy.h; sourceTree = "<group>"; };
 		B0931A0ECB579DDC30A8030291DFFCE0 /* Pods-AppLovin MAX Demo App - Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppLovin MAX Demo App - Swift-Info.plist"; sourceTree = "<group>"; };
 		B1D831F2CE8C6268EDEEAD5C45477510 /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-11.11.3/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
+		B6AF18E294D09628163110B685395325 /* TempoAdListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdListener.swift; path = TempoSDK/TempoAdListener.swift; sourceTree = "<group>"; };
 		B6C00FDB1C2E4AC3976D5B676F29F59D /* tempo-applovin-mediation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tempo-applovin-mediation.release.xcconfig"; sourceTree = "<group>"; };
-		BB02F3A12B45CF535D5BA9A59D479977 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TempoSDK/Constants.swift; sourceTree = "<group>"; };
+		B8311AC6D40C82A18840FDE5E1FE8F93 /* TempoAdController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdController.swift; path = TempoSDK/TempoAdController.swift; sourceTree = "<group>"; };
 		BB604C6F9107A07B7F91A0387C99BFEA /* ADJPurchase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchase.m; path = Adjust/ADJPurchase.m; sourceTree = "<group>"; };
 		BB63F35BDF6A2D765A25F654F2F3B94B /* ADJAdjustFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAdjustFactory.m; path = Adjust/ADJAdjustFactory.m; sourceTree = "<group>"; };
 		BC17FFD89ACB4ABE995004EC9D76F6CC /* ADJSKAdNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSKAdNetwork.m; path = Adjust/ADJSKAdNetwork.m; sourceTree = "<group>"; };
 		BECEDAAE5790C7274F7D2A07AD9F7A68 /* NSString+ADJAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ADJAdditions.h"; path = "Adjust/ADJAdditions/NSString+ADJAdditions.h"; sourceTree = "<group>"; };
 		BF11C06699AD60C72D554606DE2E5D29 /* Adjust-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Adjust-dummy.m"; sourceTree = "<group>"; };
-		C0BE28A79F5BB4EBD9A4B42A1F080D6F /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = TempoSDK/Metrics.swift; sourceTree = "<group>"; };
+		BFE33D3D6426484038AAF969D09A2CE3 /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = TempoSDK/Metrics.swift; sourceTree = "<group>"; };
+		C2D5B7F1DA7778D6D9DAA868643629D5 /* TempoSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TempoSDK-Info.plist"; sourceTree = "<group>"; };
 		C4DF1A1DE32FF1D994FF5934C91B349F /* ADJAdRevenue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAdRevenue.h; path = Adjust/ADJAdRevenue.h; sourceTree = "<group>"; };
 		C5EFC2FE42631AFA6E7E2F53D575824D /* ADJLinkResolution.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJLinkResolution.m; path = Adjust/ADJLinkResolution.m; sourceTree = "<group>"; };
 		C8519AC614309E9B9FF79D176DEC6CC2 /* ADJEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJEvent.h; path = Adjust/ADJEvent.h; sourceTree = "<group>"; };
@@ -278,18 +280,16 @@
 		CF29891008F243D56824DA42B6C77BA8 /* Pods-AppLovin MAX Demo App - Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AppLovin MAX Demo App - Swift-dummy.m"; sourceTree = "<group>"; };
 		CF5001312F6E8AD46B106CD759D3FD2D /* tempo-applovin-mediation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "tempo-applovin-mediation.modulemap"; sourceTree = "<group>"; };
 		D094613DB9DE3C3F5E05E09A847D47AC /* ADJPackageBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageBuilder.h; path = Adjust/ADJPackageBuilder.h; sourceTree = "<group>"; };
+		D43DBB41900377EB30916425ED7116C7 /* TempoUserInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoUserInfo.swift; path = TempoSDK/TempoUserInfo.swift; sourceTree = "<group>"; };
 		D5E68611F95487CD2C5BA190B50FA620 /* ADJEventSuccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJEventSuccess.h; path = Adjust/ADJEventSuccess.h; sourceTree = "<group>"; };
 		D756CFBB7442D40E092B04E09019B9AD /* Adjust.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Adjust.h; path = Adjust/Adjust.h; sourceTree = "<group>"; };
-		D7F054FBC6056A25507F9DAE9BA1C4B4 /* TempoLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoLocation.swift; path = TempoSDK/TempoLocation.swift; sourceTree = "<group>"; };
 		D85ABFF1EA50DA2CDC0233CF8162E067 /* AppLovinSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AppLovinSDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		D8D5B7AAB244B2395148C31371C98E43 /* Adjust-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Adjust-umbrella.h"; sourceTree = "<group>"; };
-		D8EC0F115735DDE071ECF773093CD1BF /* TempoAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdView.swift; path = TempoSDK/TempoAdView.swift; sourceTree = "<group>"; };
 		DD85D8A0D16B4B17940546269A304CF3 /* ALTempoMediationAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALTempoMediationAdapter.swift; path = TempoAdapter/ALTempoMediationAdapter.swift; sourceTree = "<group>"; };
 		DEFE89A0E02CD9AEA58D4D8C35F6BF0E /* ADJActivityHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityHandler.h; path = Adjust/ADJActivityHandler.h; sourceTree = "<group>"; };
 		DFD1B06F8A757F43197250BC9AFBFE56 /* NSData+ADJAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ADJAdditions.h"; path = "Adjust/ADJAdditions/NSData+ADJAdditions.h"; sourceTree = "<group>"; };
 		DFE63B124FF9F564BC6BE6306D92B852 /* ADJSessionFailure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionFailure.m; path = Adjust/ADJSessionFailure.m; sourceTree = "<group>"; };
 		E0F2A37EFFDECAE8DD94FD70AA0D3969 /* ADJAttribution.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAttribution.h; path = Adjust/ADJAttribution.h; sourceTree = "<group>"; };
-		E11CA25EBEF1FD2ACB0B066C1505381C /* TempoTesting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoTesting.swift; path = TempoSDK/TempoTesting.swift; sourceTree = "<group>"; };
 		E1707E8899DDC6C61861812384E58FED /* tempo-applovin-mediation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tempo-applovin-mediation-dummy.m"; sourceTree = "<group>"; };
 		E1B90429F2787920F58037BBAAF38DCC /* ADJTimerCycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerCycle.m; path = Adjust/ADJTimerCycle.m; sourceTree = "<group>"; };
 		E20CC7D17F2C2E941AFA99C2BFC9A083 /* ADJTimerOnce.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerOnce.m; path = Adjust/ADJTimerOnce.m; sourceTree = "<group>"; };
@@ -371,25 +371,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20921470F4F0ED3D900D8AE818E69D2B /* TempoSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BB02F3A12B45CF535D5BA9A59D479977 /* Constants.swift */,
-				C0BE28A79F5BB4EBD9A4B42A1F080D6F /* Metrics.swift */,
-				81428408A9BA0543D371783B7BE7C904 /* TempoAdController.swift */,
-				61BB2727ACE18BF616EAC0CD98F3B415 /* TempoAdListener.swift */,
-				D8EC0F115735DDE071ECF773093CD1BF /* TempoAdView.swift */,
-				3F8B67C9804543D12754236BDE9C37BC /* TempoDataBackup.swift */,
-				D7F054FBC6056A25507F9DAE9BA1C4B4 /* TempoLocation.swift */,
-				E11CA25EBEF1FD2ACB0B066C1505381C /* TempoTesting.swift */,
-				4CE20648C0DA427B0691AC4EC9776A10 /* TempoUserInfo.swift */,
-				907A784CB896F2DB023E8E4529A74236 /* TempoUtils.swift */,
-				5B9C682CBAE14A97E7180F8E6B6A4137 /* Support Files */,
-			);
-			name = TempoSDK;
-			path = TempoSDK;
-			sourceTree = "<group>";
-		};
 		2802C11C41AF827D0BC3BFFC2C4A458F /* Adjust */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,12 +389,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		330733CFE6750F009FD5E54EBBE224AF /* TempoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				584E0F0F479D85BBAA8D698D5D504509 /* Constants.swift */,
+				BFE33D3D6426484038AAF969D09A2CE3 /* Metrics.swift */,
+				B8311AC6D40C82A18840FDE5E1FE8F93 /* TempoAdController.swift */,
+				B6AF18E294D09628163110B685395325 /* TempoAdListener.swift */,
+				19C194963AA4AEF963F76D89235BB8B8 /* TempoAdView.swift */,
+				AA5CEACFDC68337B17ECD728E3F4AEB5 /* TempoDataBackup.swift */,
+				AE422CF894EA65F974C0F86B30ECC0A0 /* TempoProfile.swift */,
+				9C394BD55568A0208BB2FC74BA2B65EA /* TempoTesting.swift */,
+				D43DBB41900377EB30916425ED7116C7 /* TempoUserInfo.swift */,
+				7173344422EA2A3C52731F1A84CD566A /* TempoUtils.swift */,
+				7DA1482EEA0CC4CF69B906B6E8D16E2D /* Support Files */,
+			);
+			name = TempoSDK;
+			path = TempoSDK;
+			sourceTree = "<group>";
+		};
 		3F2B5959652DC7BB5F31E02AB12DF9E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2802C11C41AF827D0BC3BFFC2C4A458F /* Adjust */,
 				FEED34CD1170EA3B091A7703F562AC7F /* AppLovinSDK */,
-				20921470F4F0ED3D900D8AE818E69D2B /* TempoSDK */,
+				330733CFE6750F009FD5E54EBBE224AF /* TempoSDK */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -441,21 +441,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		5B9C682CBAE14A97E7180F8E6B6A4137 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0D7B391AA6D0B7F33E38A2E54F50170D /* TempoSDK.modulemap */,
-				37F49B79B6C9E9077945CDF231222804 /* TempoSDK-dummy.m */,
-				2DF7AC13835252B0148BD53C13A8A371 /* TempoSDK-Info.plist */,
-				5649913B33A1B76CFF68CF36451C56C0 /* TempoSDK-prefix.pch */,
-				150CBB68412E783C320FFF9D210C58CD /* TempoSDK-umbrella.h */,
-				19F48B611D00CEA5E39A1AA9EC8558FA /* TempoSDK.debug.xcconfig */,
-				7AA58744B8683AEE9559041D1B375CE3 /* TempoSDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TempoSDK";
-			sourceTree = "<group>";
-		};
 		653DFAE4AD9AB977575F64FCD85E15EE /* Pods-AppLovin MAX Demo App - Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +465,21 @@
 				B1D831F2CE8C6268EDEEAD5C45477510 /* AppLovinSDK.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA1482EEA0CC4CF69B906B6E8D16E2D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D6CD4323FC0E3E62CE8C2B6F530EF14 /* TempoSDK.modulemap */,
+				A767F53DCDB6DE68711741BD94C40E6F /* TempoSDK-dummy.m */,
+				C2D5B7F1DA7778D6D9DAA868643629D5 /* TempoSDK-Info.plist */,
+				8925DDACAD20D9A31BE71DB61A94A54F /* TempoSDK-prefix.pch */,
+				0FF719CB49CBE0A02E2580C8C07434E3 /* TempoSDK-umbrella.h */,
+				21EA22105B5337A50CCA0A914AE28877 /* TempoSDK.debug.xcconfig */,
+				111553BEC752A3D5A71CDC5BA91B97BE /* TempoSDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TempoSDK";
 			sourceTree = "<group>";
 		};
 		A275B60B06B82BCFF18357F76BE0F853 /* Products */ = {
@@ -748,7 +748,7 @@
 			buildConfigurationList = 754907098FD4F6A118B057F31F1BA546 /* Build configuration list for PBXNativeTarget "TempoSDK" */;
 			buildPhases = (
 				1F0D9EBE8EC756B6555C25095012B199 /* Headers */,
-				2FDA89D114C5DC43FB98280D9B6D3235 /* Sources */,
+				FE01B3C477F7C0B216479CC5CB23A22A /* Sources */,
 				1468AA36A8AA28C9F23AC6044A47E703 /* Frameworks */,
 				94C5FA4CEE113508A58A1A3CE8F1DA17 /* Resources */,
 			);
@@ -884,24 +884,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2FDA89D114C5DC43FB98280D9B6D3235 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F44514631D96DEEF25C3B4E602985259 /* Constants.swift in Sources */,
-				8668149A8D18DA610D30584978CB2EB3 /* Metrics.swift in Sources */,
-				AFBE292B5B274F0518696AC5973B8337 /* TempoAdController.swift in Sources */,
-				627230F23D00EEFC6F30AFC563B5D826 /* TempoAdListener.swift in Sources */,
-				623B39E5D65C17549226F6105DFF2EC7 /* TempoAdView.swift in Sources */,
-				1FBA247F531E4DAF9A90DA24CAEF024E /* TempoDataBackup.swift in Sources */,
-				E0200620AA4F0FA6C9A6D6A2CE1BCBD0 /* TempoLocation.swift in Sources */,
-				675081DA7D6F4D1357D11B304FA6A258 /* TempoSDK-dummy.m in Sources */,
-				CBBA688A7001CD62F34E16F19B5F2B4D /* TempoTesting.swift in Sources */,
-				3A2A71163A2200B3175A82F849E44187 /* TempoUserInfo.swift in Sources */,
-				3DF0C34B099527360E8C530F0A05CF20 /* TempoUtils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3DFE24C1B6255DF24DA60D39F8D7523A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -966,6 +948,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE01B3C477F7C0B216479CC5CB23A22A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7061967659ACCD1E7A2D9EC4A2E1BAF0 /* Constants.swift in Sources */,
+				2CE1FF6A5285D5B4E56B75E3AAD9E8BB /* Metrics.swift in Sources */,
+				AD8E59C069DA58385793B0826D17FB99 /* TempoAdController.swift in Sources */,
+				B01CF44525E6842AF3C54102BF9A824E /* TempoAdListener.swift in Sources */,
+				93FF171BAE1D54619E92628873CEF97D /* TempoAdView.swift in Sources */,
+				1A31D0D01B1F0E919328A9077D86D12B /* TempoDataBackup.swift in Sources */,
+				7FBCF9FD2AB5D1255FE6DC7C99916434 /* TempoProfile.swift in Sources */,
+				2CAA59022A99F29DF248911C73FE0F6E /* TempoSDK-dummy.m in Sources */,
+				BB735398D89A08D5223154C4D6885D12 /* TempoTesting.swift in Sources */,
+				09783BEB98A0B3FFFB13BFB2E9FEF863 /* TempoUserInfo.swift in Sources */,
+				B837CEF165AA6DD8A4D15B988BDE9657 /* TempoUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1010,7 +1010,7 @@
 /* Begin XCBuildConfiguration section */
 		4ACC9CEB726721EA54DA2B9C4E2E3486 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19F48B611D00CEA5E39A1AA9EC8558FA /* TempoSDK.debug.xcconfig */;
+			baseConfigurationReference = 21EA22105B5337A50CCA0A914AE28877 /* TempoSDK.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1266,7 +1266,7 @@
 		};
 		BCC51FA902D9DC6CB031434C087E1DA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AA58744B8683AEE9559041D1B375CE3 /* TempoSDK.release.xcconfig */;
+			baseConfigurationReference = 111553BEC752A3D5A71CDC5BA91B97BE /* TempoSDK.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
