@@ -60,20 +60,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
         
-//        // Create if not already done so
-//        if self.interstitial == nil {
-//            self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
-//            if self.interstitial != nil {
-//                self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-//            } else {
-//                self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
-//            }
-//        } else {
-//            DispatchQueue.main.async {
-//                self.interstitial!.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-//            }
-//        }
-        
         if self.interstitial == nil {
             self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
             
@@ -85,7 +71,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         
         // Load ad, provided the ad controller is not null
         self.interstitial?.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-        //self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
         
         
     }
@@ -136,21 +121,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
         TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
-        
-        // Create if not already done so
-//        if self.rewarded == nil {
-//            self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
-//            if self.rewarded != nil {
-//                self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-//            } else {
-//                self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
-//            }
-//        } else {
-//            DispatchQueue.main.async {
-//                self.rewarded!.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-//            }
-//        }
-        
+
         if self.rewarded == nil {
             self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
             
@@ -162,7 +133,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         
         // Load ad, provided the ad controller is not null
         self.rewarded?.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-        //self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
     }
     
     /// Function used by AppLovin SDK when selecting to play a loaded REWARDED ad
