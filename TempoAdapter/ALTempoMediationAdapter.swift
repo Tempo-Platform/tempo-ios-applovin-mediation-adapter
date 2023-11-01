@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.3.1"
+    let TEMPO_ADAPTER_VERSION: String = "1.3.2-rc.3"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -33,11 +33,133 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         isDoNotSell = ALPrivacySettings.isDoNotSell()
         isAgeRestrictedUser = ALPrivacySettings.isAgeRestrictedUser()
         
-        // Run AppLovin initialisers
-        completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
-        
         // Run any backups
         TempoDataBackup.initCheck()
+        
+        // Run AppLovin initialisers
+        completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
+    }
+    
+    /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
+    public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+        //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
+        
+        // We use this value to trigger AppLovin callbacks
+        self.interstitialDelegate = delegate
+        
+        // Get values from AppLovin and custom parameters
+        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
+        var appId: String? = ""
+        var cpmFloor: Float = 0
+        
+        // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
+        appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
+        
+        // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
+        cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
+        
+        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
+        
+        if self.interstitial == nil {
+            self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
+            
+            if self.interstitial == nil {
+                self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
+                return
+            }
+        }
+        
+        // Load ad, provided the ad controller is not null
+        self.interstitial?.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
+        
+        
+    }
+    
+    /// Function used by AppLovin SDK when selecting to play a loaded  INTERSTITIAL ad
+    public func showInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+        
+        // Set AL delegate
+        self.interstitialDelegate = delegate
+        
+//        if (!isInterstitialReady) {
+//            self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
+//            return
+//        }
+//
+//        self.interstitial!.showAd(parentViewController: getTopVC(parameters: parameters))
+        
+        // Send ad not ready error if needed
+        guard isInterstitialReady else {
+            self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
+            return
+        }
+
+        // Checks that parent/base ViewController is valid and then shows ad
+        if let topVC = getTopVC(parameters: parameters) {
+            self.interstitial?.showAd(parentViewController: topVC)
+        } else {
+            self.onTempoAdShowFailed(isInterstitial: true, reason: "Could not get a parent ViewController")
+        }
+    }
+   
+    /// Function used by AppLovin SDK when loading an REWARDED ad
+    public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
+        //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
+        
+        // We use this value to trigger AppLovin callbacks
+        self.rewardedDelegate = delegate
+        
+        // Get values from AppLovin and custom parameters
+        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
+        var appId: String? = ""
+        var cpmFloor: Float = 0
+        
+        // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
+        appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
+        
+        // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
+        cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
+        
+        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
+
+        if self.rewarded == nil {
+            self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
+            
+            if self.rewarded == nil {
+                self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
+                return
+            }
+        }
+        
+        // Load ad, provided the ad controller is not null
+        self.rewarded?.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
+    }
+    
+    /// Function used by AppLovin SDK when selecting to play a loaded REWARDED ad
+    public func showRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
+
+        // Set AL delegate
+        self.rewardedDelegate = delegate
+        
+//        if (!isRewardedReady) {
+//            self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
+//            return
+//        }
+//        
+//        self.rewarded!.showAd(parentViewController: getTopVC(parameters: parameters))
+        
+        // Send ad not ready error if needed
+        guard isRewardedReady else {
+            self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
+            return
+        }
+
+        // Checks that parent/base ViewController is valid and then shows ad
+        if let topVC = getTopVC(parameters: parameters) {
+            self.rewarded?.showAd(parentViewController: topVC)
+        } else {
+            self.onTempoAdShowFailed(isInterstitial: false, reason: "Could not get a parent ViewController")
+        }
     }
     
     /// Validates parameter String values
@@ -81,98 +203,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         }
         
         return returningFloat
-    }
-    
-    /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
-    public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
-        //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
-        
-        // We use this value to trigger AppLovin callbacks
-        self.interstitialDelegate = delegate
-        
-        // Get values from AppLovin and custom parameters
-        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
-        var appId: String? = ""
-        var cpmFloor: Float = 0
-        
-        // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
-        appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
-        
-        // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
-        cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
-        
-        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
-        
-        // Create if not already done so
-        if self.interstitial == nil {
-            self.interstitial = TempoAdController(tempoAdListener: self, appId: appId)
-            if self.interstitial != nil {
-                self.interstitial!.checkLocationConsentAndLoad(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-            } else {
-                self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.interstitial!.loadAd(isInterstitial: true, cpmFloor: cpmFloor, placementId: placementId)
-            }
-        }
-    }
-    
-    /// Function used by AppLovin SDK when selecting to play a loaded  INTERSTITIAL ad
-    public func showInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
-        self.interstitialDelegate = delegate
-        if (!isInterstitialReady) {
-            self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.adNotReady)
-            return
-        }
-
-        self.interstitial!.showAd(parentViewController: getTopVC(parameters: parameters))
-    }
-   
-    /// Function used by AppLovin SDK when loading an REWARDED ad
-    public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
-        //TempoUtils.Say(msg: "👉 customParameters\(parameters.customParameters)")
-        
-        // We use this value to trigger AppLovin callbacks
-        self.rewardedDelegate = delegate
-        
-        // Get values from AppLovin and custom parameters
-        let placementId: String? = parameters.thirdPartyAdPlacementIdentifier
-        var appId: String? = ""
-        var cpmFloor: Float = 0
-        
-        // Check for App ID in custom parameters, if missing (or typo) parameter value will be nil
-        appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
-        
-        // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
-        cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
-        
-        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
-        
-        // Create if not already done so
-        if self.rewarded == nil {
-            self.rewarded = TempoAdController(tempoAdListener: self, appId: appId)
-            if self.rewarded != nil {
-                self.rewarded!.checkLocationConsentAndLoad(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-            } else {
-                self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.rewarded!.loadAd(isInterstitial: false, cpmFloor: cpmFloor, placementId: placementId)
-            }
-        }
-    }
-    
-    /// Function used by AppLovin SDK when selecting to play a loaded REWARDED ad
-    public func showRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
-        self.rewardedDelegate = delegate
-        if (!isRewardedReady) {
-            self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.adNotReady)
-            return
-        }
-        
-        self.rewarded!.showAd(parentViewController: getTopVC(parameters: parameters))
     }
     
     /// Function that selects the top-most ViewController to build the ad's WebView on top of
@@ -239,7 +269,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.rewardedDelegate?.didClickRewardedAd()
         }
     }
-    
     public func onTempoAdShowFailed(isInterstitial: Bool, reason: String?) {
         if (isInterstitial && (self.interstitialDelegate != nil)) {
             self.interstitialDelegate?.didFailToDisplayInterstitialAdWithError(MAAdapterError.internalError)
