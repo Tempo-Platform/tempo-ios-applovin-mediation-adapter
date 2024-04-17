@@ -26,7 +26,6 @@
 		08B0D3BE3AF80446416EB82DBAAFB6A9 /* TempoSDK-TempoSDK in Resources */ = {isa = PBXBuildFile; fileRef = 04F7C329936901350EEBDAAE55ABBEC1 /* TempoSDK-TempoSDK */; };
 		08B0DE6BA66716208900CB5CD76FF883 /* ADJActivityKind.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DA15FCAEB791CBD9846C07FEAA78EE7 /* ADJActivityKind.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C1149A68A4A6611213854E5130540A3 /* ADJSessionFailure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE0F08E0B34CD685363B32B7A271B6 /* ADJSessionFailure.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0D3CE2CB2BCF4BFC00EE8353 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D3CE2CA2BCF4BFC00EE8353 /* PrivacyInfo.xcprivacy */; };
 		0F5D155CEE199B7A22AA33356A873496 /* ADJThirdPartySharing.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F28820B08CA8C6FF739B5FC19C023B2 /* ADJThirdPartySharing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12F89F098F0419B8E9F12D86E53E51A7 /* ADJResponseData.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7818B3B923134F40C5C17DBE5DF3A3 /* ADJResponseData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1954C394C1769D020EB21EB2328FADD8 /* ADJPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2504969609D58E9C1524E9BF5F13C1D8 /* ADJPurchase.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -38,13 +37,11 @@
 		2344F8E5292FF63EDD8F8C26B7C5358A /* ADJSessionParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 4990A4BE3590291913F2F7B996902CA5 /* ADJSessionParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		250FAB998FFFA1E0BD07ABCC0A541336 /* Adjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86A26ABF22235522F9751D41A60257 /* Adjust.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2E13EF87C5AA607081B545E6D67345A7 /* ADJAttribution.m in Sources */ = {isa = PBXBuildFile; fileRef = FE4919151F3C0EF9FBD10DCD257620B2 /* ADJAttribution.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2E2B395E2F5B5247022F6BEED714F928 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CC17424C939C6D055338C493B7BEA2C3 /* PrivacyInfo.xcprivacy */; };
 		2F2C2194FCC6D5CB93C15D83E135FBB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DE96DC511BD1CE643E8E9A8CE72374 /* SystemConfiguration.framework */; };
-		393A298721FE66ECDCDFBAD202D85A60 /* tempo-applovin-mediation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A59F7F0259AB64882F11DB4D818CD6B4 /* tempo-applovin-mediation-dummy.m */; };
-		3A76CAD0B1DD507F907221A0B56C71A6 /* ALTempoMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F324EC5B3A4267BC62F69DA89C4435B /* ALTempoMediationAdapter.swift */; };
+		393A298721FE66ECDCDFBAD202D85A60 /* tempo-applovin-mediation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE23FF781FD307CDD4198672B04749 /* tempo-applovin-mediation-dummy.m */; };
+		3A76CAD0B1DD507F907221A0B56C71A6 /* ALTempoMediationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCE61A9EE16C3458833FDB4B5B56F79 /* ALTempoMediationAdapter.swift */; };
 		3B5A35D0E46C7DB5F405C1436F59BFFC /* ADJLinkResolution.h in Headers */ = {isa = PBXBuildFile; fileRef = D707F0FCC242CBF3A78FDC16533552D0 /* ADJLinkResolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BCE1DD9B1FF619AE7C9B35BDF4B71DE /* ADJRequestHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E65957F04D1C4B00D62683DE5FCD84 /* ADJRequestHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3EA07683F2E282704457E39D2CAFA59F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2CE28859A7CEC22E1666E1C3AD2F7DDB /* PrivacyInfo.xcprivacy */; };
 		3F3297235E7EB25BE214C3BAA8C4A0A9 /* NSString+ADJAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCE8FF87BF8E6DBF75D0BB69C45CFCF /* NSString+ADJAdditions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		43CA90D660F7DE22825D0E0BDDEDF4D7 /* Pods-AppLovin MAX Demo App - Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 240FE56A8C74D5AF78BCDD941C390997 /* Pods-AppLovin MAX Demo App - Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4811FCCEADDDAC6455ADFD2564B26DC3 /* ADJSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 93C969A4D58634B3FBD75CB2B2D8A125 /* ADJSubscription.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +56,7 @@
 		546B1CE5B47B8D6186FDF13E94FB36A3 /* TempoSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6099C315FACB515E406191530A32B1 /* TempoSDK-dummy.m */; };
 		55D2213F8112DD5D3EF6920A34DED9CB /* ADJConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = BAE10587C4C4B47BB38EAF953F14D6D1 /* ADJConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5728F81892452FAA4E216FA2DA5F0DD2 /* ADJAttributionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 456DEA80229DC94295D4EE1CED02498F /* ADJAttributionHandler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5E12D1E910994657D2BBEAB44FEDBBA0 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 268ED536E5F5E60CE715C8A0357E8A6C /* PrivacyInfo.xcprivacy */; };
 		5E871B7004076C05C928E4AB9BEE66DA /* ADJPackageHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 39D42584D65312CB290BBC447602ED48 /* ADJPackageHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6125EB449E8FA7806029047271DB83E1 /* ADJLinkResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F13ACE1FCDCA3A739689D38C29ABA01 /* ADJLinkResolution.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		61D83DE3CCFD0C0131FF6674683137AC /* ADJTimerCycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E0C87019408DAC9834C96AADB7CCD35 /* ADJTimerCycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -91,7 +89,9 @@
 		A66B2BA5F0B933BC603CBB4E9043DFB6 /* ADJEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B463D879DF882EB9B7416B4B99DEFA4 /* ADJEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A79811EFB295DD954F48C75A54E6F87E /* ADJUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C476216B2659E464E6B9CEE13E4F9F9 /* ADJUserDefaults.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		AF18ADB38B474BCC6CD912C656EBE688 /* ADJSessionParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = A42D322AD11FF7F7C571775C26724E2F /* ADJSessionParameters.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B37AEF4B2B1D63B1F199A5E24EA8C397 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2CE28859A7CEC22E1666E1C3AD2F7DDB /* PrivacyInfo.xcprivacy */; };
 		B775C5CEB14E0AE65416DD14FB15CD79 /* TempoSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B0C6147877F199B571488630A4AD800 /* TempoSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9323B164E8B1233EDCE8DD182912CE1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CC17424C939C6D055338C493B7BEA2C3 /* PrivacyInfo.xcprivacy */; };
 		B9E21470BA09B071D4C2EB71DDDA3985 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30453446C5310EA114B978294858C9A5 /* Foundation.framework */; };
 		BAA0F4E9F669183F1AD6728A6CAA2EE0 /* ADJTimerOnce.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C08287937EF490E818A2987F0D2FC01 /* ADJTimerOnce.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1F467CC227492A30931C707F7BF8665 /* ADJUrlStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = C08F1D05951384D4BD8BE23F0841EC6C /* ADJUrlStrategy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -107,7 +107,7 @@
 		DDD464468103B3BDDB3BAB5A798F0B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30453446C5310EA114B978294858C9A5 /* Foundation.framework */; };
 		DE8106969336749AD01D4166B0074412 /* ADJSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = B05809B2B4C5CA5615D39CDCCA4E9127 /* ADJSubscription.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E0D9FE4C345932E2661FDFF1892A1CCC /* Adjust-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3486053D2A453705C9D173166FC5FE /* Adjust-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E28BFB8D9DD9D09A490BD9F26A35E425 /* tempo-applovin-mediation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA1DBEDB971131762EF0638E8075CAC /* tempo-applovin-mediation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E28BFB8D9DD9D09A490BD9F26A35E425 /* tempo-applovin-mediation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 683BCE98EFA1BF6071C65D7DF2F2DD16 /* tempo-applovin-mediation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E450D7968AFC37D8E99C65AD495BD5BD /* ADJUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DF422276387DBBBCD76DB2C1E965135D /* ADJUtil.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E4908714F485FCF94492E7B95F8EDD72 /* TempoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E90D281072E9EBF800A0FC57FFA3970 /* TempoProfile.swift */; };
 		E5895E6609947B3CF1532DBD97872C90 /* Adjust.h in Headers */ = {isa = PBXBuildFile; fileRef = 943B5C53E55B5ECF51E07477493560D5 /* Adjust.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,99 +131,98 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		452C3DCA0FBA2655130CA8087FC66C82 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3ECF259FDE3D82AA954434061683CCCE;
-			remoteInfo = "tempo-applovin-mediation";
-		};
-		478B059355C8213C727ADDA300107FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 452BF17928B1327D885539AD22EC7515;
-			remoteInfo = TempoSDK;
-		};
-		4A7D9C332C2A670767866FF54F50225E /* PBXContainerItemProxy */ = {
+		0D0D884160D27C4355066C6A7B40DF0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = AD26A41E4718A690C3828AB9DFDCC5D8;
 			remoteInfo = "TempoSDK-TempoSDK";
 		};
-		6BE805208503809BCB6DCE530C91729D /* PBXContainerItemProxy */ = {
+		2DB278BD9F4474F3C68DF285FD5948D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 452BF17928B1327D885539AD22EC7515;
 			remoteInfo = TempoSDK;
 		};
-		B66B61BBBB125F7913C4E47E8311FAD2 /* PBXContainerItemProxy */ = {
+		3E8C17556ADB4E1392147C24C48A2D1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5BC46914A3617E8E5EA6E625B5DD1684;
 			remoteInfo = AppLovinSDK;
 		};
-		CBD89CB95459774FA13B3B8C2D80B6C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7111F362EA0D14BECD8B96EA1EAA5F79;
-			remoteInfo = Adjust;
-		};
-		D32B676CC135DA6A675C5F14F93F3F94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5BC46914A3617E8E5EA6E625B5DD1684;
-			remoteInfo = AppLovinSDK;
-		};
-		DE7FD123A035864105F01ABABE54D555 /* PBXContainerItemProxy */ = {
+		496B9A1B4BABC1E15C3F1698AC5CBB1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 471352CEDDB3183F0E470F770197C032;
 			remoteInfo = "Adjust-Adjust";
 		};
-		EE42B71B19408FF9549A1A52E187DA04 /* PBXContainerItemProxy */ = {
+		9056AAE3BCC3FD5B3D2E292E1F698885 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BC46914A3617E8E5EA6E625B5DD1684;
+			remoteInfo = AppLovinSDK;
+		};
+		93FD0CB1000061676DAC517563C306EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 452BF17928B1327D885539AD22EC7515;
+			remoteInfo = TempoSDK;
+		};
+		CC0D3652EA1581334D50498FEC9186B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7111F362EA0D14BECD8B96EA1EAA5F79;
+			remoteInfo = Adjust;
+		};
+		D53B6CAA23AA2D1ED7822D43E6E9D0A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC0BE2A29664AD0DEE46D7E4FF395BDB;
 			remoteInfo = "tempo-applovin-mediation-TempoAdapter";
 		};
+		EFB027A7B8C863CF64C5385E2356AFA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ECF259FDE3D82AA954434061683CCCE;
+			remoteInfo = "tempo-applovin-mediation";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		024B2F89408B27226D7C2312112A8FC4 /* ADJSdkClickHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSdkClickHandler.m; path = Adjust/ADJSdkClickHandler.m; sourceTree = "<group>"; };
-		0344B35D0ECC20F8A5CCC1C88396CB1C /* tempo-applovin-mediation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-prefix.pch"; sourceTree = "<group>"; };
 		04136CEC124A378E209EFF22D920E71D /* ADJSessionFailure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSessionFailure.h; path = Adjust/ADJSessionFailure.h; sourceTree = "<group>"; };
 		04F7C329936901350EEBDAAE55ABBEC1 /* TempoSDK-TempoSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "TempoSDK-TempoSDK"; path = TempoSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		083D6B3642A79D134390CA32EE8E5FF1 /* ADJPackageParams.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPackageParams.m; path = Adjust/ADJPackageParams.m; sourceTree = "<group>"; };
 		0A8073CBD891D3164BC0FF77DF429F19 /* TempoUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoUtils.swift; path = TempoSDK/TempoUtils.swift; sourceTree = "<group>"; };
 		0C7502ECB2F46F7CA56C5548876E71FB /* ADJActivityState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJActivityState.m; path = Adjust/ADJActivityState.m; sourceTree = "<group>"; };
-		0D3CE2CA2BCF4BFC00EE8353 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TempoAdapter/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		0E040A498E1D6D381A415B59E7D7109E /* ADJActivityKind.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJActivityKind.m; path = Adjust/ADJActivityKind.m; sourceTree = "<group>"; };
 		0F30401EFB1E3D9BAE240D8B42CC242F /* TempoAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdView.swift; path = TempoSDK/TempoAdView.swift; sourceTree = "<group>"; };
 		104D82DC5DA04A12543C6C4C9C643393 /* TempoSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TempoSDK.debug.xcconfig; sourceTree = "<group>"; };
 		124A0D65F5653D6954CE33F22CA9AD0D /* ADJEventFailure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJEventFailure.m; path = Adjust/ADJEventFailure.m; sourceTree = "<group>"; };
 		1299B1DF1424B09CD5BFE65C6EF9DBEE /* NSData+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSData+ADJAdditions.m"; sourceTree = "<group>"; };
+		157328831633448B374654E1DFE3DCD0 /* tempo-applovin-mediation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tempo-applovin-mediation.release.xcconfig"; sourceTree = "<group>"; };
 		1720B385E02A0FEEDFC59DCD39525634 /* Pods-AppLovin MAX Demo App - Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AppLovin MAX Demo App - Swift.modulemap"; sourceTree = "<group>"; };
 		17EB74CEE6D2CA2B63B50B9084AE3341 /* ADJThirdPartySharing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJThirdPartySharing.m; path = Adjust/ADJThirdPartySharing.m; sourceTree = "<group>"; };
 		17EB7F7EF7EF33746C25787665B3648A /* TempoAdListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdListener.swift; path = TempoSDK/TempoAdListener.swift; sourceTree = "<group>"; };
 		18DE96DC511BD1CE643E8E9A8CE72374 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		1AE49B97FD72147E6E4788C2A64C7EAF /* tempo-applovin-mediation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "tempo-applovin-mediation.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1D173E76BC46A2B8071CAC3B9BBEAC67 /* ADJSdkClickHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSdkClickHandler.h; path = Adjust/ADJSdkClickHandler.h; sourceTree = "<group>"; };
 		1D3486053D2A453705C9D173166FC5FE /* Adjust-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Adjust-umbrella.h"; sourceTree = "<group>"; };
-		1F1FAAAE5C5A03EA0A5FCA486FDFFC82 /* tempo-applovin-mediation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "tempo-applovin-mediation.modulemap"; sourceTree = "<group>"; };
-		20452DDE3324C363B4170A8CB60A89B8 /* ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist"; sourceTree = "<group>"; };
 		21446C46F56CD790DB93CCBF59AE9ACD /* ADJPackageBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPackageBuilder.m; path = Adjust/ADJPackageBuilder.m; sourceTree = "<group>"; };
 		240FE56A8C74D5AF78BCDD941C390997 /* Pods-AppLovin MAX Demo App - Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AppLovin MAX Demo App - Swift-umbrella.h"; sourceTree = "<group>"; };
 		2504969609D58E9C1524E9BF5F13C1D8 /* ADJPurchase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchase.m; path = Adjust/ADJPurchase.m; sourceTree = "<group>"; };
-		285B6BF392491380E194C5699F9A2AE5 /* tempo-applovin-mediation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tempo-applovin-mediation.debug.xcconfig"; sourceTree = "<group>"; };
+		268ED536E5F5E60CE715C8A0357E8A6C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TempoAdapter/Resources/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		27BE23FF781FD307CDD4198672B04749 /* tempo-applovin-mediation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tempo-applovin-mediation-dummy.m"; sourceTree = "<group>"; };
 		28EE5C0C4792856EDB735DF3C73498E3 /* Pods-AppLovin MAX Demo App - Swift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AppLovin MAX Demo App - Swift-frameworks.sh"; sourceTree = "<group>"; };
+		2994944488779EDEBC38E3F8713134F8 /* ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist"; sourceTree = "<group>"; };
+		29CD9C7F23DD3E9E3B1F2305EA474847 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		29F2AF7FEB647C53274833345BE687DB /* ADJPurchaseVerificationResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPurchaseVerificationResult.h; path = Adjust/ADJPurchaseVerificationResult.h; sourceTree = "<group>"; };
 		2C08287937EF490E818A2987F0D2FC01 /* ADJTimerOnce.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJTimerOnce.h; path = Adjust/ADJTimerOnce.h; sourceTree = "<group>"; };
 		2CE28859A7CEC22E1666E1C3AD2F7DDB /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Adjust/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -231,6 +230,7 @@
 		30453446C5310EA114B978294858C9A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		34DC402DF17300241EC21669639F293C /* ADJBackoffStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJBackoffStrategy.m; path = Adjust/ADJBackoffStrategy.m; sourceTree = "<group>"; };
 		39D42584D65312CB290BBC447602ED48 /* ADJPackageHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageHandler.h; path = Adjust/ADJPackageHandler.h; sourceTree = "<group>"; };
+		3B143E9A665AE841299DB87DCB4566EE /* tempo-applovin-mediation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "tempo-applovin-mediation.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3DA15FCAEB791CBD9846C07FEAA78EE7 /* ADJActivityKind.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityKind.h; path = Adjust/ADJActivityKind.h; sourceTree = "<group>"; };
 		3DBEFA1C9873F8A1B19974725B937D42 /* TempoSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TempoSDK.modulemap; sourceTree = "<group>"; };
 		3E0C87019408DAC9834C96AADB7CCD35 /* ADJTimerCycle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJTimerCycle.h; path = Adjust/ADJTimerCycle.h; sourceTree = "<group>"; };
@@ -239,6 +239,7 @@
 		41D7142585CC1ACBCE5F334DEF481F1D /* ADJActivityPackage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityPackage.h; path = Adjust/ADJActivityPackage.h; sourceTree = "<group>"; };
 		427F075842DE9AD7FE155C1012313359 /* NSString+ADJAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+ADJAdditions.h"; path = "Adjust/ADJAdditions/NSString+ADJAdditions.h"; sourceTree = "<group>"; };
 		42B2003DB6F873EC96FFB39A244E5A5F /* Adjust.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Adjust.modulemap; sourceTree = "<group>"; };
+		4363065BD33C36C85BA7EDC053CBC6FC /* tempo-applovin-mediation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "tempo-applovin-mediation.modulemap"; sourceTree = "<group>"; };
 		43F1FEC7AE1E5E85633A55E555422AFA /* ADJUserDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUserDefaults.h; path = Adjust/ADJUserDefaults.h; sourceTree = "<group>"; };
 		456DEA80229DC94295D4EE1CED02498F /* ADJAttributionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAttributionHandler.m; path = Adjust/ADJAttributionHandler.m; sourceTree = "<group>"; };
 		45D12985B2CB967961495AF3CC77444D /* AppLovinSDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "AppLovinSDK-xcframeworks.sh"; sourceTree = "<group>"; };
@@ -246,9 +247,7 @@
 		4A684346BFC8D341879CC3BE6926E328 /* ADJTimerCycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerCycle.m; path = Adjust/ADJTimerCycle.m; sourceTree = "<group>"; };
 		4A86A26ABF22235522F9751D41A60257 /* Adjust.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Adjust.m; path = Adjust/Adjust.m; sourceTree = "<group>"; };
 		4B463D879DF882EB9B7416B4B99DEFA4 /* ADJEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJEvent.h; path = Adjust/ADJEvent.h; sourceTree = "<group>"; };
-		4BB01CF912377B4629E387EAC4D57B06 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4DEE0F08E0B34CD685363B32B7A271B6 /* ADJSessionFailure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionFailure.m; path = Adjust/ADJSessionFailure.m; sourceTree = "<group>"; };
-		4F324EC5B3A4267BC62F69DA89C4435B /* ALTempoMediationAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALTempoMediationAdapter.swift; path = TempoAdapter/ALTempoMediationAdapter.swift; sourceTree = "<group>"; };
 		52DAEA0020DC52BAE3A78CF531951713 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TempoSDK/Constants.swift; sourceTree = "<group>"; };
 		5405DAEA969F2B80A54B5D6AC78BC2CC /* ADJAttributionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAttributionHandler.h; path = Adjust/ADJAttributionHandler.h; sourceTree = "<group>"; };
 		54E65957F04D1C4B00D62683DE5FCD84 /* ADJRequestHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJRequestHandler.h; path = Adjust/ADJRequestHandler.h; sourceTree = "<group>"; };
@@ -259,8 +258,8 @@
 		5F13ACE1FCDCA3A739689D38C29ABA01 /* ADJLinkResolution.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJLinkResolution.m; path = Adjust/ADJLinkResolution.m; sourceTree = "<group>"; };
 		6317BB02D74B3325D76E574C602BA50F /* ADJPackageParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageParams.h; path = Adjust/ADJPackageParams.h; sourceTree = "<group>"; };
 		63AB051BAB484E6EFA3E31CDBAFEFAAB /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-12.4.1/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
-		67BB0F4236D4133B2BA27026CBEF2A9D /* tempo-applovin-mediation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tempo-applovin-mediation.release.xcconfig"; sourceTree = "<group>"; };
-		687E65AE5431EB2CAE23C758D4B3A312 /* tempo-applovin-mediation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "tempo-applovin-mediation-Info.plist"; sourceTree = "<group>"; };
+		65CED435E9B62DEF9999E4C94AD02C84 /* tempo-applovin-mediation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "tempo-applovin-mediation.debug.xcconfig"; sourceTree = "<group>"; };
+		683BCE98EFA1BF6071C65D7DF2F2DD16 /* tempo-applovin-mediation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-umbrella.h"; sourceTree = "<group>"; };
 		6C452119328443B3A3BEAAC059B97B5F /* ResourceBundle-Adjust-Adjust-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Adjust-Adjust-Info.plist"; sourceTree = "<group>"; };
 		6E1D1D8D0D4C57E9549CD0CFBA7954B0 /* ADJSKAdNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSKAdNetwork.m; path = Adjust/ADJSKAdNetwork.m; sourceTree = "<group>"; };
 		6E2FD2D799ED39CD1557629D133206D5 /* Pods-AppLovin MAX Demo App - Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AppLovin MAX Demo App - Swift"; path = "Pods_AppLovin_MAX_Demo_App___Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,10 +270,11 @@
 		822C329E4E6706FF47CC944AD38DFD5C /* ADJAdRevenue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAdRevenue.m; path = Adjust/ADJAdRevenue.m; sourceTree = "<group>"; };
 		8302A31B5B44D647941A5F909C5D6684 /* ADJTimerOnce.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerOnce.m; path = Adjust/ADJTimerOnce.m; sourceTree = "<group>"; };
 		857ACE2899BDC4E4113D0EA543A0D274 /* NSNumber+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSNumber+ADJAdditions.m"; sourceTree = "<group>"; };
+		88679557090BFFA1D065400BB7BD3ACC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		895EB5FCE41E26958A3B2E8CC62054C1 /* ADJSessionSuccess.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionSuccess.m; path = Adjust/ADJSessionSuccess.m; sourceTree = "<group>"; };
 		8B0C6147877F199B571488630A4AD800 /* TempoSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TempoSDK-umbrella.h"; sourceTree = "<group>"; };
+		8CCE61A9EE16C3458833FDB4B5B56F79 /* ALTempoMediationAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ALTempoMediationAdapter.swift; path = TempoAdapter/ALTempoMediationAdapter.swift; sourceTree = "<group>"; };
 		8CFD8982DAFAD3E480B133847A6501EB /* TempoAdController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdController.swift; path = TempoSDK/TempoAdController.swift; sourceTree = "<group>"; };
-		8D666AA6C0E9E2118D09D8337693FD1F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E095C63329B143FCAFA22AB062C6E03 /* ADJEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJEvent.m; path = Adjust/ADJEvent.m; sourceTree = "<group>"; };
 		93C969A4D58634B3FBD75CB2B2D8A125 /* ADJSubscription.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSubscription.h; path = Adjust/ADJSubscription.h; sourceTree = "<group>"; };
 		93D5453BC3A9418D5F2E624F62DE5CC9 /* ADJAdRevenue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAdRevenue.h; path = Adjust/ADJAdRevenue.h; sourceTree = "<group>"; };
@@ -289,11 +289,9 @@
 		A1920027A894D1F8363E95283E76C0C3 /* ADJUrlStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJUrlStrategy.m; path = Adjust/ADJUrlStrategy.m; sourceTree = "<group>"; };
 		A26108099D4224DCA36B7F4B3ED9766D /* ADJAdjustFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAdjustFactory.m; path = Adjust/ADJAdjustFactory.m; sourceTree = "<group>"; };
 		A42D322AD11FF7F7C571775C26724E2F /* ADJSessionParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSessionParameters.m; path = Adjust/ADJSessionParameters.m; sourceTree = "<group>"; };
-		A59F7F0259AB64882F11DB4D818CD6B4 /* tempo-applovin-mediation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tempo-applovin-mediation-dummy.m"; sourceTree = "<group>"; };
 		AAB7182D4639D972F3AF3387CE20A35B /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = TempoSDK/Metrics.swift; sourceTree = "<group>"; };
 		AC43189EDA1415FE30A83AA9FF4461F9 /* Adjust-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Adjust-prefix.pch"; sourceTree = "<group>"; };
 		AC64F04FED84B44CFD7711D21C42A27A /* ADJEventFailure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJEventFailure.h; path = Adjust/ADJEventFailure.h; sourceTree = "<group>"; };
-		ACA1DBEDB971131762EF0638E8075CAC /* tempo-applovin-mediation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-umbrella.h"; sourceTree = "<group>"; };
 		B05809B2B4C5CA5615D39CDCCA4E9127 /* ADJSubscription.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJSubscription.m; path = Adjust/ADJSubscription.m; sourceTree = "<group>"; };
 		B0931A0ECB579DDC30A8030291DFFCE0 /* Pods-AppLovin MAX Demo App - Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppLovin MAX Demo App - Swift-Info.plist"; sourceTree = "<group>"; };
 		B3865895D3A24AD1BC4DE96325891328 /* ADJActivityHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJActivityHandler.m; path = Adjust/ADJActivityHandler.m; sourceTree = "<group>"; };
@@ -307,6 +305,7 @@
 		BC36853D370596040882F90D1B5784D1 /* ADJActivityPackage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJActivityPackage.m; path = Adjust/ADJActivityPackage.m; sourceTree = "<group>"; };
 		BF7818B3B923134F40C5C17DBE5DF3A3 /* ADJResponseData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJResponseData.h; path = Adjust/ADJResponseData.h; sourceTree = "<group>"; };
 		C08F1D05951384D4BD8BE23F0841EC6C /* ADJUrlStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUrlStrategy.h; path = Adjust/ADJUrlStrategy.h; sourceTree = "<group>"; };
+		C1B7DFA4BD5A404536F05C6AAB4202C1 /* tempo-applovin-mediation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-prefix.pch"; sourceTree = "<group>"; };
 		C44199912A1AA4CCD5EC26D3EA3D3783 /* tempo-applovin-mediation-TempoAdapter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "tempo-applovin-mediation-TempoAdapter"; path = TempoAdapter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4975E4E104A97A50D85A88CC2537ADA /* ADJUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUtil.h; path = Adjust/ADJUtil.h; sourceTree = "<group>"; };
 		C8CD5B1A1EC4745ED14CF0266E85B703 /* TempoSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TempoSDK-Info.plist"; sourceTree = "<group>"; };
@@ -328,6 +327,7 @@
 		E6B3BC946F55CB4978237E4BAA5AED4C /* Pods-AppLovin MAX Demo App - Swift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppLovin MAX Demo App - Swift-acknowledgements.plist"; sourceTree = "<group>"; };
 		E77199DA1869A74FCEFA832AB71B64A3 /* ADJPurchaseVerificationHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPurchaseVerificationHandler.h; path = Adjust/ADJPurchaseVerificationHandler.h; sourceTree = "<group>"; };
 		E81178D3ED9EEEE2A763A04DC650C3C9 /* ADJPurchaseVerificationResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchaseVerificationResult.m; path = Adjust/ADJPurchaseVerificationResult.m; sourceTree = "<group>"; };
+		E995E120270BAFD1A0B04A167C428F1A /* tempo-applovin-mediation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "tempo-applovin-mediation-Info.plist"; sourceTree = "<group>"; };
 		EAC0B05F9772AE859DB0012D3D3314FC /* AppLovinSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AppLovinSDK.debug.xcconfig; sourceTree = "<group>"; };
 		EC120E12A5AF3FE8F1BCFC7738B422BE /* ADJRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJRequestHandler.m; path = Adjust/ADJRequestHandler.m; sourceTree = "<group>"; };
 		ECF6F07EB67383692CB200E3F1B924CA /* ADJActivityHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJActivityHandler.h; path = Adjust/ADJActivityHandler.h; sourceTree = "<group>"; };
@@ -343,11 +343,32 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		21A3DC4E95DD25243D0CE80588F678A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		254E466C77C62B8EE8658AAA4AA6783E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34356E4E1CD5A02C53C377E27C147AEE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9311EA80DC797EEF3C868AAB29A67827 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		408B04604DBB1D1CB24F83D54F54A5F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,32 +389,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3D0D72D819CA39D31607B0FE9572AA9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DEC13F1F7F590FFF5CD18239719D26A4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E58537AF56F0A0FAA0B2C9618290F388 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				65A141669AF69A8CB9A5387CC867359C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC85F66414F934089CDFB0C60E20250D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +407,16 @@
 				E0C74B3B31C5C677676EBA795689BA66 /* Support Files */,
 			);
 			path = AppLovinSDK;
+			sourceTree = "<group>";
+		};
+		0AE9F140C459A489BDC9F155EF837904 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				88679557090BFFA1D065400BB7BD3ACC /* LICENSE */,
+				29CD9C7F23DD3E9E3B1F2305EA474847 /* README.md */,
+				3B143E9A665AE841299DB87DCB4566EE /* tempo-applovin-mediation.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		0F77B8FA6AA39C100DB4B4A70C8AE18B /* Adjust */ = {
@@ -437,14 +447,6 @@
 			path = TempoSDK;
 			sourceTree = "<group>";
 		};
-		15D432A374B30F19E2356DA0CB32F40F /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9B3937E3D7981490F6B6A811D62C38EC /* tempo-applovin-mediation */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,22 +471,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3709A03C75F4D80986943D26BDDD1F84 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				20452DDE3324C363B4170A8CB60A89B8 /* ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist */,
-				1F1FAAAE5C5A03EA0A5FCA486FDFFC82 /* tempo-applovin-mediation.modulemap */,
-				A59F7F0259AB64882F11DB4D818CD6B4 /* tempo-applovin-mediation-dummy.m */,
-				687E65AE5431EB2CAE23C758D4B3A312 /* tempo-applovin-mediation-Info.plist */,
-				0344B35D0ECC20F8A5CCC1C88396CB1C /* tempo-applovin-mediation-prefix.pch */,
-				ACA1DBEDB971131762EF0638E8075CAC /* tempo-applovin-mediation-umbrella.h */,
-				285B6BF392491380E194C5699F9A2AE5 /* tempo-applovin-mediation.debug.xcconfig */,
-				67BB0F4236D4133B2BA27026CBEF2A9D /* tempo-applovin-mediation.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "AppLovin MAX Demo App - Swift/Pods/Target Support Files/tempo-applovin-mediation";
-			sourceTree = "<group>";
-		};
 		38D8A3BD6CC4410C5C81AE700E49D97C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +485,34 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Adjust";
+			sourceTree = "<group>";
+		};
+		3957889CFCCC1329259938AFC189F38C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2994944488779EDEBC38E3F8713134F8 /* ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist */,
+				4363065BD33C36C85BA7EDC053CBC6FC /* tempo-applovin-mediation.modulemap */,
+				27BE23FF781FD307CDD4198672B04749 /* tempo-applovin-mediation-dummy.m */,
+				E995E120270BAFD1A0B04A167C428F1A /* tempo-applovin-mediation-Info.plist */,
+				C1B7DFA4BD5A404536F05C6AAB4202C1 /* tempo-applovin-mediation-prefix.pch */,
+				683BCE98EFA1BF6071C65D7DF2F2DD16 /* tempo-applovin-mediation-umbrella.h */,
+				65CED435E9B62DEF9999E4C94AD02C84 /* tempo-applovin-mediation.debug.xcconfig */,
+				157328831633448B374654E1DFE3DCD0 /* tempo-applovin-mediation.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "AppLovin MAX Demo App - Swift/Pods/Target Support Files/tempo-applovin-mediation";
+			sourceTree = "<group>";
+		};
+		47FF0F7AE09B3C56C6E0D771676C3B2B /* tempo-applovin-mediation */ = {
+			isa = PBXGroup;
+			children = (
+				8CCE61A9EE16C3458833FDB4B5B56F79 /* ALTempoMediationAdapter.swift */,
+				268ED536E5F5E60CE715C8A0357E8A6C /* PrivacyInfo.xcprivacy */,
+				0AE9F140C459A489BDC9F155EF837904 /* Pod */,
+				3957889CFCCC1329259938AFC189F38C /* Support Files */,
+			);
+			name = "tempo-applovin-mediation";
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		49875DCA05D53BCA3FBE02D2E8ECD3AB /* Resources */ = {
@@ -557,34 +571,12 @@
 			path = "Target Support Files/Pods-AppLovin MAX Demo App - Swift";
 			sourceTree = "<group>";
 		};
-		8472EE6E18EAE97CE41A9E273C73D2DB /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4BB01CF912377B4629E387EAC4D57B06 /* LICENSE */,
-				8D666AA6C0E9E2118D09D8337693FD1F /* README.md */,
-				1AE49B97FD72147E6E4788C2A64C7EAF /* tempo-applovin-mediation.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		91498F3A89BE917DE31EAA5F8CA402E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				63AB051BAB484E6EFA3E31CDBAFEFAAB /* AppLovinSDK.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9B3937E3D7981490F6B6A811D62C38EC /* tempo-applovin-mediation */ = {
-			isa = PBXGroup;
-			children = (
-				4F324EC5B3A4267BC62F69DA89C4435B /* ALTempoMediationAdapter.swift */,
-				8472EE6E18EAE97CE41A9E273C73D2DB /* Pod */,
-				3709A03C75F4D80986943D26BDDD1F84 /* Support Files */,
-				0D3CE2CA2BCF4BFC00EE8353 /* PrivacyInfo.xcprivacy */,
-			);
-			name = "tempo-applovin-mediation";
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		A651368EF97F3D9B9BAA0C0FD537DD81 /* iOS */ = {
@@ -594,6 +586,14 @@
 				18DE96DC511BD1CE643E8E9A8CE72374 /* SystemConfiguration.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		AA5BB6FC25B8114CE34384CD1D78201A /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47FF0F7AE09B3C56C6E0D771676C3B2B /* tempo-applovin-mediation */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		AFBC529E06DB6D4D91F4D9C4F7D49D31 /* Pods */ = {
@@ -610,7 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				15D432A374B30F19E2356DA0CB32F40F /* Development Pods */,
+				AA5BB6FC25B8114CE34384CD1D78201A /* Development Pods */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				AFBC529E06DB6D4D91F4D9C4F7D49D31 /* Pods */,
 				5169691B6BAE9D7AF42F7D82992A4176 /* Products */,
@@ -804,9 +804,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				29AC2B384E48048349F5AE2D9132570B /* PBXTargetDependency */,
-				636476D7026261609DCE9A92ADD33DF1 /* PBXTargetDependency */,
-				4F8D6B78404A886F766FCF99C230F121 /* PBXTargetDependency */,
+				746A5C9082AD97AA0BE5F5DF0F5EF761 /* PBXTargetDependency */,
+				00D2C11027739A70BD5FE3FC450414A5 /* PBXTargetDependency */,
+				9AECDB1DBA09B8B9CDC63429C4BBBD23 /* PBXTargetDependency */,
 			);
 			name = "tempo-applovin-mediation";
 			productName = tempo_applovin_mediation;
@@ -825,7 +825,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C217C7F4FF5DCE6AD564C7CB5B33A66D /* PBXTargetDependency */,
+				4CEED66848D3E4C53F0759C9F3308965 /* PBXTargetDependency */,
 			);
 			name = TempoSDK;
 			productName = TempoSDK;
@@ -834,11 +834,11 @@
 		};
 		471352CEDDB3183F0E470F770197C032 /* Adjust-Adjust */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B601D8E85FC2213C8BE94BAB999E8061 /* Build configuration list for PBXNativeTarget "Adjust-Adjust" */;
+			buildConfigurationList = 9602BCE57239E6DA9582A440819E877F /* Build configuration list for PBXNativeTarget "Adjust-Adjust" */;
 			buildPhases = (
-				472FE4BA5E36B0E85BA270EB95A5E975 /* Sources */,
-				FC85F66414F934089CDFB0C60E20250D /* Frameworks */,
-				C843B982CCE6841BC85013F61F8A7504 /* Resources */,
+				313A952C3D0CD7043B4122DA5BBC0810 /* Sources */,
+				21A3DC4E95DD25243D0CE80588F678A1 /* Frameworks */,
+				A0E9D687DDDADC93C23031154424EEEE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -861,7 +861,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				4373545C4EF9BD911FFA99317DAFF56D /* PBXTargetDependency */,
+				7ED4CCA23C66FDC47B01AB3A999B3A2D /* PBXTargetDependency */,
 			);
 			name = Adjust;
 			productName = Adjust;
@@ -870,11 +870,11 @@
 		};
 		AD26A41E4718A690C3828AB9DFDCC5D8 /* TempoSDK-TempoSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C506F8D42668EE04F53F4AF7A048D0FF /* Build configuration list for PBXNativeTarget "TempoSDK-TempoSDK" */;
+			buildConfigurationList = 751DC1B55482692AF1DC8D7DE195BBA8 /* Build configuration list for PBXNativeTarget "TempoSDK-TempoSDK" */;
 			buildPhases = (
-				BE3C75261DF397360D333109BA6242E4 /* Sources */,
-				D3D0D72D819CA39D31607B0FE9572AA9 /* Frameworks */,
-				304FDF374EF4BE5953489C3B05B5B986 /* Resources */,
+				6F69662FEDD7E577BC18D658CCA3697F /* Sources */,
+				254E466C77C62B8EE8658AAA4AA6783E /* Frameworks */,
+				2B78D67A2C30FE4CFDCCD46B3C2718EE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -887,11 +887,11 @@
 		};
 		DC0BE2A29664AD0DEE46D7E4FF395BDB /* tempo-applovin-mediation-TempoAdapter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE608574364C72985B2C9790ECF657D2 /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation-TempoAdapter" */;
+			buildConfigurationList = B21D7A31312F55021AEA3796F526637F /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation-TempoAdapter" */;
 			buildPhases = (
-				60B027CE05309E67A631B1F94121E919 /* Sources */,
-				DEC13F1F7F590FFF5CD18239719D26A4 /* Frameworks */,
-				4665698564A02EB0BFE06BF39B24A73D /* Resources */,
+				AB77E5352B4C91C46B38F07FB50483B5 /* Sources */,
+				408B04604DBB1D1CB24F83D54F54A5F0 /* Frameworks */,
+				9A028181335F0D8E785D2BEE44C9D834 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -914,10 +914,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				D5378E5FDB79E2D7F764B9787EAAA819 /* PBXTargetDependency */,
-				A632EA3B8E2AB03BCAC52F32D46EE5CE /* PBXTargetDependency */,
-				00EE2A9AB78C33CF06216EA193618BD0 /* PBXTargetDependency */,
-				A989E384D8615AFDBD9095568C6D57FF /* PBXTargetDependency */,
+				9240B3A96C4316DB6A20C82FAB35D1E3 /* PBXTargetDependency */,
+				F71CA637AA22DBEAE4B543C421D959F2 /* PBXTargetDependency */,
+				E5A16121CFD4AE6522A3240C83AA1EF7 /* PBXTargetDependency */,
+				D067CED2FE528DBF9D89D66F8FAC23F9 /* PBXTargetDependency */,
 			);
 			name = "Pods-AppLovin MAX Demo App - Swift";
 			productName = "Pods_AppLovin_MAX_Demo_App___Swift";
@@ -966,18 +966,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		304FDF374EF4BE5953489C3B05B5B986 /* Resources */ = {
+		2B78D67A2C30FE4CFDCCD46B3C2718EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E2B395E2F5B5247022F6BEED714F928 /* PrivacyInfo.xcprivacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4665698564A02EB0BFE06BF39B24A73D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B9323B164E8B1233EDCE8DD182912CE1 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,19 +982,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A028181335F0D8E785D2BEE44C9D834 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E12D1E910994657D2BBEAB44FEDBBA0 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0E9D687DDDADC93C23031154424EEEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37AEF4B2B1D63B1F199A5E24EA8C397 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C097E0722725F29E60E0B3F44ABBE468 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D3CE2CB2BCF4BFC00EE8353 /* PrivacyInfo.xcprivacy in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C843B982CCE6841BC85013F61F8A7504 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3EA07683F2E282704457E39D2CAFA59F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,6 +1036,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		313A952C3D0CD7043B4122DA5BBC0810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		405CA9D8F1D18463835A66962E2BAE9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1045,14 +1052,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		472FE4BA5E36B0E85BA270EB95A5E975 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		60B027CE05309E67A631B1F94121E919 /* Sources */ = {
+		6F69662FEDD7E577BC18D658CCA3697F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1085,7 +1085,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BE3C75261DF397360D333109BA6242E4 /* Sources */ = {
+		AB77E5352B4C91C46B38F07FB50483B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1142,63 +1142,97 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		00EE2A9AB78C33CF06216EA193618BD0 /* PBXTargetDependency */ = {
+		00D2C11027739A70BD5FE3FC450414A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TempoSDK;
 			target = 452BF17928B1327D885539AD22EC7515 /* TempoSDK */;
-			targetProxy = 6BE805208503809BCB6DCE530C91729D /* PBXContainerItemProxy */;
+			targetProxy = 93FD0CB1000061676DAC517563C306EB /* PBXContainerItemProxy */;
 		};
-		29AC2B384E48048349F5AE2D9132570B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppLovinSDK;
-			target = 5BC46914A3617E8E5EA6E625B5DD1684 /* AppLovinSDK */;
-			targetProxy = B66B61BBBB125F7913C4E47E8311FAD2 /* PBXContainerItemProxy */;
-		};
-		4373545C4EF9BD911FFA99317DAFF56D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Adjust-Adjust";
-			target = 471352CEDDB3183F0E470F770197C032 /* Adjust-Adjust */;
-			targetProxy = DE7FD123A035864105F01ABABE54D555 /* PBXContainerItemProxy */;
-		};
-		4F8D6B78404A886F766FCF99C230F121 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "tempo-applovin-mediation-TempoAdapter";
-			target = DC0BE2A29664AD0DEE46D7E4FF395BDB /* tempo-applovin-mediation-TempoAdapter */;
-			targetProxy = EE42B71B19408FF9549A1A52E187DA04 /* PBXContainerItemProxy */;
-		};
-		636476D7026261609DCE9A92ADD33DF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TempoSDK;
-			target = 452BF17928B1327D885539AD22EC7515 /* TempoSDK */;
-			targetProxy = 478B059355C8213C727ADDA300107FE1 /* PBXContainerItemProxy */;
-		};
-		A632EA3B8E2AB03BCAC52F32D46EE5CE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AppLovinSDK;
-			target = 5BC46914A3617E8E5EA6E625B5DD1684 /* AppLovinSDK */;
-			targetProxy = D32B676CC135DA6A675C5F14F93F3F94 /* PBXContainerItemProxy */;
-		};
-		A989E384D8615AFDBD9095568C6D57FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "tempo-applovin-mediation";
-			target = 3ECF259FDE3D82AA954434061683CCCE /* tempo-applovin-mediation */;
-			targetProxy = 452C3DCA0FBA2655130CA8087FC66C82 /* PBXContainerItemProxy */;
-		};
-		C217C7F4FF5DCE6AD564C7CB5B33A66D /* PBXTargetDependency */ = {
+		4CEED66848D3E4C53F0759C9F3308965 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "TempoSDK-TempoSDK";
 			target = AD26A41E4718A690C3828AB9DFDCC5D8 /* TempoSDK-TempoSDK */;
-			targetProxy = 4A7D9C332C2A670767866FF54F50225E /* PBXContainerItemProxy */;
+			targetProxy = 0D0D884160D27C4355066C6A7B40DF0B /* PBXContainerItemProxy */;
 		};
-		D5378E5FDB79E2D7F764B9787EAAA819 /* PBXTargetDependency */ = {
+		746A5C9082AD97AA0BE5F5DF0F5EF761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppLovinSDK;
+			target = 5BC46914A3617E8E5EA6E625B5DD1684 /* AppLovinSDK */;
+			targetProxy = 3E8C17556ADB4E1392147C24C48A2D1D /* PBXContainerItemProxy */;
+		};
+		7ED4CCA23C66FDC47B01AB3A999B3A2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Adjust-Adjust";
+			target = 471352CEDDB3183F0E470F770197C032 /* Adjust-Adjust */;
+			targetProxy = 496B9A1B4BABC1E15C3F1698AC5CBB1D /* PBXContainerItemProxy */;
+		};
+		9240B3A96C4316DB6A20C82FAB35D1E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Adjust;
 			target = 7111F362EA0D14BECD8B96EA1EAA5F79 /* Adjust */;
-			targetProxy = CBD89CB95459774FA13B3B8C2D80B6C2 /* PBXContainerItemProxy */;
+			targetProxy = CC0D3652EA1581334D50498FEC9186B5 /* PBXContainerItemProxy */;
+		};
+		9AECDB1DBA09B8B9CDC63429C4BBBD23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "tempo-applovin-mediation-TempoAdapter";
+			target = DC0BE2A29664AD0DEE46D7E4FF395BDB /* tempo-applovin-mediation-TempoAdapter */;
+			targetProxy = D53B6CAA23AA2D1ED7822D43E6E9D0A9 /* PBXContainerItemProxy */;
+		};
+		D067CED2FE528DBF9D89D66F8FAC23F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "tempo-applovin-mediation";
+			target = 3ECF259FDE3D82AA954434061683CCCE /* tempo-applovin-mediation */;
+			targetProxy = EFB027A7B8C863CF64C5385E2356AFA7 /* PBXContainerItemProxy */;
+		};
+		E5A16121CFD4AE6522A3240C83AA1EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TempoSDK;
+			target = 452BF17928B1327D885539AD22EC7515 /* TempoSDK */;
+			targetProxy = 2DB278BD9F4474F3C68DF285FD5948D3 /* PBXContainerItemProxy */;
+		};
+		F71CA637AA22DBEAE4B543C421D959F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppLovinSDK;
+			target = 5BC46914A3617E8E5EA6E625B5DD1684 /* AppLovinSDK */;
+			targetProxy = 9056AAE3BCC3FD5B3D2E292E1F698885 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0347ED339F0FACB3DC208D4264D81BB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DCC14F6730949AE220024519397E27B /* Adjust.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Adjust";
+				IBSC_MODULE = Adjust;
+				INFOPLIST_FILE = "Target Support Files/Adjust/ResourceBundle-Adjust-Adjust-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = Adjust;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		3DD9D5E06F66D913D33F65D23D5D08B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 104D82DC5DA04A12543C6C4C9C643393 /* TempoSDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TempoSDK";
+				IBSC_MODULE = TempoSDK;
+				INFOPLIST_FILE = "Target Support Files/TempoSDK/ResourceBundle-TempoSDK-TempoSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = TempoSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		4129B6559FA55DB6B6191ED9F288A69A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 104D82DC5DA04A12543C6C4C9C643393 /* TempoSDK.debug.xcconfig */;
@@ -1366,7 +1400,7 @@
 		};
 		6DC7A3B94FF6E2F6DCA21E0ECED36615 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 285B6BF392491380E194C5699F9A2AE5 /* tempo-applovin-mediation.debug.xcconfig */;
+			baseConfigurationReference = 65CED435E9B62DEF9999E4C94AD02C84 /* tempo-applovin-mediation.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1401,23 +1435,6 @@
 			};
 			name = Debug;
 		};
-		77718BC6994F4034E805FDF16EF8DD9F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1D564A3ED32F3F6D27F2EB869C05153 /* TempoSDK.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TempoSDK";
-				IBSC_MODULE = TempoSDK;
-				INFOPLIST_FILE = "Target Support Files/TempoSDK/ResourceBundle-TempoSDK-TempoSDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = TempoSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		8002F5653E73729A5A07F2DE1592C4AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE27BBD782F1AADE91706ED0625525A8 /* AppLovinSDK.release.xcconfig */;
@@ -1436,23 +1453,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		83F05C96B7A93B1DA73EBACB159BC05D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 285B6BF392491380E194C5699F9A2AE5 /* tempo-applovin-mediation.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/tempo-applovin-mediation";
-				IBSC_MODULE = tempo_applovin_mediation;
-				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = TempoAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1516,26 +1516,9 @@
 			};
 			name = Release;
 		};
-		95CC29A9FB32CD934FE203F87CEFD35A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4E447DCB1D13242EAD289ABC8F7E126 /* Adjust.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Adjust";
-				IBSC_MODULE = Adjust;
-				INFOPLIST_FILE = "Target Support Files/Adjust/ResourceBundle-Adjust-Adjust-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = Adjust;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		9A93D851EF0E2366D04BBFA9BCAE1779 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67BB0F4236D4133B2BA27026CBEF2A9D /* tempo-applovin-mediation.release.xcconfig */;
+			baseConfigurationReference = 157328831633448B374654E1DFE3DCD0 /* tempo-applovin-mediation.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1571,6 +1554,23 @@
 			};
 			name = Release;
 		};
+		A3C1FBB58556BFD15A8FBC3D1747BCD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65CED435E9B62DEF9999E4C94AD02C84 /* tempo-applovin-mediation.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/tempo-applovin-mediation";
+				IBSC_MODULE = tempo_applovin_mediation;
+				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = TempoAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		A7140BAE04578DA8DAE4A9703D6294FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DCC14F6730949AE220024519397E27B /* Adjust.release.xcconfig */;
@@ -1604,23 +1604,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B4C152906747407BF8C4F54C4D072674 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67BB0F4236D4133B2BA27026CBEF2A9D /* tempo-applovin-mediation.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/tempo-applovin-mediation";
-				IBSC_MODULE = tempo_applovin_mediation;
-				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = TempoAdapter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -1690,26 +1673,9 @@
 			};
 			name = Debug;
 		};
-		BE01FC7AF2BC39993FBDEC80EA4D9AAA /* Release */ = {
+		B99813B12EE1BC1AB6C05C9CFBA5299E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DCC14F6730949AE220024519397E27B /* Adjust.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGNING_ALLOWED = NO;
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Adjust";
-				IBSC_MODULE = Adjust;
-				INFOPLIST_FILE = "Target Support Files/Adjust/ResourceBundle-Adjust-Adjust-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = Adjust;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		C9871F9EDFC2C679E64EC4C93C30B8F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 104D82DC5DA04A12543C6C4C9C643393 /* TempoSDK.debug.xcconfig */;
+			baseConfigurationReference = E1D564A3ED32F3F6D27F2EB869C05153 /* TempoSDK.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGNING_ALLOWED = NO;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TempoSDK";
@@ -1717,6 +1683,23 @@
 				INFOPLIST_FILE = "Target Support Files/TempoSDK/ResourceBundle-TempoSDK-TempoSDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = TempoSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		DEABB06321AE3C726069A76EE83878CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E447DCB1D13242EAD289ABC8F7E126 /* Adjust.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Adjust";
+				IBSC_MODULE = Adjust;
+				INFOPLIST_FILE = "Target Support Files/Adjust/ResourceBundle-Adjust-Adjust-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = Adjust;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1762,6 +1745,23 @@
 			};
 			name = Debug;
 		};
+		F503CB807476D2598641070ED4B00127 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 157328831633448B374654E1DFE3DCD0 /* tempo-applovin-mediation.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/tempo-applovin-mediation";
+				IBSC_MODULE = tempo_applovin_mediation;
+				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/ResourceBundle-TempoAdapter-tempo-applovin-mediation-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = TempoAdapter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1783,6 +1783,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		751DC1B55482692AF1DC8D7DE195BBA8 /* Build configuration list for PBXNativeTarget "TempoSDK-TempoSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DD9D5E06F66D913D33F65D23D5D08B1 /* Debug */,
+				B99813B12EE1BC1AB6C05C9CFBA5299E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9602BCE57239E6DA9582A440819E877F /* Build configuration list for PBXNativeTarget "Adjust-Adjust" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEABB06321AE3C726069A76EE83878CE /* Debug */,
+				0347ED339F0FACB3DC208D4264D81BB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0B9834D27214C4A65B8FC08E4116A58 /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1792,11 +1810,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B601D8E85FC2213C8BE94BAB999E8061 /* Build configuration list for PBXNativeTarget "Adjust-Adjust" */ = {
+		B21D7A31312F55021AEA3796F526637F /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation-TempoAdapter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				95CC29A9FB32CD934FE203F87CEFD35A /* Debug */,
-				BE01FC7AF2BC39993FBDEC80EA4D9AAA /* Release */,
+				A3C1FBB58556BFD15A8FBC3D1747BCD4 /* Debug */,
+				F503CB807476D2598641070ED4B00127 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1810,29 +1828,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C506F8D42668EE04F53F4AF7A048D0FF /* Build configuration list for PBXNativeTarget "TempoSDK-TempoSDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C9871F9EDFC2C679E64EC4C93C30B8F3 /* Debug */,
-				77718BC6994F4034E805FDF16EF8DD9F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C625431806198174AEF2D657C4FDDA30 /* Build configuration list for PBXNativeTarget "Pods-AppLovin MAX Demo App - Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1BF5107B710E0CEE8EF0CF0EBD9192C /* Debug */,
 				4D9DE30009015D3B5AB2A969051EA45C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE608574364C72985B2C9790ECF657D2 /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation-TempoAdapter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83F05C96B7A93B1DA73EBACB159BC05D /* Debug */,
-				B4C152906747407BF8C4F54C4D072674 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
