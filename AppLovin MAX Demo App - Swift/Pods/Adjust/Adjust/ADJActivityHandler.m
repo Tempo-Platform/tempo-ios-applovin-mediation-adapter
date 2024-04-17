@@ -106,6 +106,7 @@ const NSUInteger kWaitingForAttStatusLimitSeconds = 120;
 @property (nonatomic, copy) NSString* gdprPath;
 @property (nonatomic, copy) NSString* subscriptionPath;
 @property (nonatomic, copy) NSString* purchaseVerificationPath;
+@property (nonatomic, copy) AdjustResolvedDeeplinkBlock cachedDeeplinkResolutionCallback;
 
 - (void)prepareDeeplinkI:(ADJActivityHandler *_Nullable)selfI
             responseData:(ADJAttributionResponseData *_Nullable)attributionResponseData NS_EXTENSION_UNAVAILABLE_IOS("");
@@ -118,9 +119,9 @@ const NSUInteger kWaitingForAttStatusLimitSeconds = 120;
 @synthesize attribution = _attribution;
 @synthesize trackingStatusManager = _trackingStatusManager;
 
-- (id)initWithConfig:(ADJConfig *)adjustConfig
-      savedPreLaunch:(ADJSavedPreLaunch *)savedPreLaunch
-{
+- (id)initWithConfig:(ADJConfig *_Nullable)adjustConfig
+      savedPreLaunch:(ADJSavedPreLaunch * _Nullable)savedPreLaunch
+      deeplinkResolutionCallback:(AdjustResolvedDeeplinkBlock _Nullable)deepLinkResolutionCallback {
     self = [super init];
     if (self == nil) return nil;
 
@@ -151,6 +152,7 @@ const NSUInteger kWaitingForAttStatusLimitSeconds = 120;
     self.adjustConfig = adjustConfig;
     self.savedPreLaunch = savedPreLaunch;
     self.adjustDelegate = adjustConfig.delegate;
+    self.cachedDeeplinkResolutionCallback = deepLinkResolutionCallback;
 
     // init logger to be available everywhere
     self.logger = ADJAdjustFactory.logger;
@@ -380,6 +382,17 @@ const NSUInteger kWaitingForAttStatusLimitSeconds = 120;
                      block:^(ADJActivityHandler * selfI) {
                          [selfI appWillOpenUrlI:selfI url:url clickTime:clickTime];
                      }];
+}
+
+- (void)processDeeplink:(NSURL * _Nullable)deeplink
+              clickTime:(NSDate * _Nullable)clickTime
+      completionHandler:(AdjustResolvedDeeplinkBlock _Nullable)completionHandler {
+    [ADJUtil launchInQueue:self.internalQueue
+                selfInject:self
+                     block:^(ADJActivityHandler * selfI) {
+        selfI.cachedDeeplinkResolutionCallback = completionHandler;
+        [selfI appWillOpenUrlI:selfI url:deeplink clickTime:clickTime];
+    }];
 }
 
 - (void)setDeviceToken:(NSData *)deviceToken {
@@ -1017,6 +1030,28 @@ preLaunchActions:(ADJSavedPreLaunch*)preLaunchActions
         [ADJUserDefaults removeDisableThirdPartySharing];
 
         return;
+    } else {
+        // these checks should run after SDK initialization after the first one
+        if ([ADJUserDefaults getDisableThirdPartySharing]) {
+            [selfI disableThirdPartySharingI:selfI];
+        }
+        if (selfI.savedPreLaunch.preLaunchAdjustThirdPartySharingArray != nil) {
+            for (ADJThirdPartySharing *thirdPartySharing
+                 in selfI.savedPreLaunch.preLaunchAdjustThirdPartySharingArray)
+            {
+                [selfI trackThirdPartySharingI:selfI
+                             thirdPartySharing:thirdPartySharing];
+            }
+
+            selfI.savedPreLaunch.preLaunchAdjustThirdPartySharingArray = nil;
+        }
+        if (selfI.savedPreLaunch.lastMeasurementConsentTracked != nil) {
+            [selfI
+                trackMeasurementConsentI:selfI
+                enabled:[selfI.savedPreLaunch.lastMeasurementConsentTracked boolValue]];
+
+            selfI.savedPreLaunch.lastMeasurementConsentTracked = nil;
+        }
     }
 
     double lastInterval = now - selfI.activityState.lastActivity;
@@ -1555,6 +1590,16 @@ preLaunchActions:(ADJSavedPreLaunch*)preLaunchActions
         [ADJUtil launchInMainThread:selfI.adjustDelegate
                            selector:@selector(adjustAttributionChanged:)
                          withObject:sdkClickResponseData.attribution];
+    }
+
+    // check if we got resolved deep link in the response
+    if (sdkClickResponseData.resolvedDeeplink != nil) {
+        if (selfI.cachedDeeplinkResolutionCallback != nil) {
+            [ADJUtil launchInMainThread:^{
+                selfI.cachedDeeplinkResolutionCallback(sdkClickResponseData.resolvedDeeplink);
+                selfI.cachedDeeplinkResolutionCallback = nil;
+            }];
+        }
     }
 }
 
@@ -2580,9 +2625,9 @@ sdkClickHandlerOnly:(BOOL)sdkClickHandlerOnly
     // update activity packages
     int attStatus = [ADJUtil attStatus];
     if (attStatus != 0) {
-        [selfI.packageHandler updatePackagesWithIdfaAndAttStatus];
-        [selfI.sdkClickHandler updatePackagesWithIdfaAndAttStatus];
-        [selfI.purchaseVerificationHandler updatePackagesWithIdfaAndAttStatus];
+        [selfI.packageHandler updatePackagesWithAttStatus:attStatus];
+        [selfI.sdkClickHandler updatePackagesWithAttStatus:attStatus];
+        [selfI.purchaseVerificationHandler updatePackagesWithAttStatus:attStatus];
     }
 
     selfI.internalState.updatePackagesAttData = NO;
@@ -2861,6 +2906,7 @@ sdkClickHandlerOnly:(BOOL)sdkClickHandlerOnly
 - (void)updateAttStatusFromUserCallback:(int)newAttStatusFromUser {
     [self.trackingStatusManager updateAttStatusFromUserCallback:newAttStatusFromUser];
 }
+
 
 - (void)processCoppaComplianceI:(ADJActivityHandler *)selfI {
     if (!selfI.adjustConfig.coppaCompliantEnabled) {

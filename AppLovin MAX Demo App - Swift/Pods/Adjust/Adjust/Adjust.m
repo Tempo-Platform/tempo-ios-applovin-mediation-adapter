@@ -30,10 +30,14 @@ NSString * const ADJAdRevenueSourceAdMost = @"admost_sdk";
 NSString * const ADJAdRevenueSourceUnity = @"unity_sdk";
 NSString * const ADJAdRevenueSourceHeliumChartboost = @"helium_chartboost_sdk";
 NSString * const ADJAdRevenueSourcePublisher = @"publisher_sdk";
+NSString * const ADJAdRevenueSourceTopOn = @"topon_sdk";
+NSString * const ADJAdRevenueSourceADX = @"adx_sdk";
+NSString * const ADJAdRevenueSourceTradplus = @"tradplus_sdk";
 
 NSString * const ADJUrlStrategyIndia = @"UrlStrategyIndia";
 NSString * const ADJUrlStrategyChina = @"UrlStrategyChina";
 NSString * const ADJUrlStrategyCn = @"UrlStrategyCn";
+NSString * const ADJUrlStrategyCnOnly = @"UrlStrategyCnOnly";
 
 NSString * const ADJDataResidencyEU = @"DataResidencyEU";
 NSString * const ADJDataResidencyTR = @"DataResidencyTR";
@@ -49,6 +53,8 @@ NSString * const ADJDataResidencyUS = @"DataResidencyUS";
 @property (nonatomic, strong) id<ADJActivityHandler> activityHandler;
 
 @property (nonatomic, strong) ADJSavedPreLaunch *savedPreLaunch;
+
+@property (nonatomic) AdjustResolvedDeeplinkBlock cachedResolvedDeeplinkBlock;
 
 @end
 
@@ -75,6 +81,7 @@ static dispatch_once_t onceToken = 0;
     self.activityHandler = nil;
     self.logger = [ADJAdjustFactory logger];
     self.savedPreLaunch = [[ADJSavedPreLaunch alloc] init];
+    self.cachedResolvedDeeplinkBlock = nil;
     return self;
 }
 
@@ -123,6 +130,13 @@ static dispatch_once_t onceToken = 0;
     }
 }
 
++ (void)processDeeplink:(nonnull NSURL *)deeplink
+      completionHandler:(void (^_Nonnull)(NSString * _Nonnull resolvedLink))completionHandler {
+    @synchronized (self) {
+        [[Adjust getInstance] processDeeplink:deeplink completionHandler:completionHandler];
+    }
+}
+
 + (void)setDeviceToken:(NSData *)deviceToken {
     @synchronized (self) {
         [[Adjust getInstance] setDeviceToken:[deviceToken copy]];
@@ -148,6 +162,12 @@ static dispatch_once_t onceToken = 0;
 + (NSString *)idfa {
     @synchronized (self) {
         return [[Adjust getInstance] idfa];
+    }
+}
+
++ (NSString *)idfv {
+    @synchronized (self) {
+        return [[Adjust getInstance] idfv];
     }
 }
 
@@ -347,9 +367,9 @@ static dispatch_once_t onceToken = 0;
         [self.logger error:@"Adjust already initialized"];
         return;
     }
-    self.activityHandler = [[ADJActivityHandler alloc]
-                                initWithConfig:adjustConfig
-                                savedPreLaunch:self.savedPreLaunch];
+    self.activityHandler = [[ADJActivityHandler alloc] initWithConfig:adjustConfig
+                                                       savedPreLaunch:self.savedPreLaunch
+                                           deeplinkResolutionCallback:self.cachedResolvedDeeplinkBlock];
 }
 
 - (void)trackEvent:(ADJEvent *)event {
@@ -400,6 +420,27 @@ static dispatch_once_t onceToken = 0;
     [self.activityHandler appWillOpenUrl:url withClickTime:clickTime];
 }
 
+- (void)processDeeplink:(nonnull NSURL *)deeplink
+      completionHandler:(void (^_Nonnull)(NSString * _Nonnull resolvedLink))completionHandler {
+    // if resolution result is not wanted, fallback to default method
+    if (completionHandler == nil) {
+        [self appWillOpenUrl:deeplink];
+        return;
+    }
+    // if deep link processing is triggered prior to SDK being initialized
+    [ADJUserDefaults cacheDeeplinkUrl:deeplink];
+    NSDate *clickTime = [NSDate date];
+    if (![self checkActivityHandler]) {
+        [ADJUserDefaults saveDeeplinkUrl:deeplink andClickTime:clickTime];
+        self.cachedResolvedDeeplinkBlock = completionHandler;
+        return;
+    }
+    // if deep link processing was triggered with SDK being initialized
+    [self.activityHandler processDeeplink:deeplink
+                                clickTime:clickTime
+                        completionHandler:completionHandler];
+}
+
 - (void)setDeviceToken:(NSData *)deviceToken {
     [ADJUserDefaults savePushTokenData:deviceToken];
 
@@ -432,6 +473,10 @@ static dispatch_once_t onceToken = 0;
 
 - (NSString *)idfa {
     return [ADJUtil idfa];
+}
+
+- (NSString *)idfv {
+    return [ADJUtil idfv];
 }
 
 - (NSURL *)convertUniversalLink:(NSURL *)url scheme:(NSString *)scheme {
@@ -683,17 +728,8 @@ static dispatch_once_t onceToken = 0;
     if (testOptions.extraPath != nil) {
         self.savedPreLaunch.extraPath = testOptions.extraPath;
     }
-    if (testOptions.baseUrl != nil) {
-        [ADJAdjustFactory setBaseUrl:testOptions.baseUrl];
-    }
-    if (testOptions.gdprUrl != nil) {
-        [ADJAdjustFactory setGdprUrl:testOptions.gdprUrl];
-    }
-    if (testOptions.subscriptionUrl != nil) {
-        [ADJAdjustFactory setSubscriptionUrl:testOptions.subscriptionUrl];
-    }
-    if (testOptions.purchaseVerificationUrl != nil) {
-        [ADJAdjustFactory setPurchaseVerificationUrl:testOptions.purchaseVerificationUrl];
+    if (testOptions.urlOverwrite != nil) {
+        [ADJAdjustFactory setUrlOverwrite:testOptions.urlOverwrite];
     }
     if (testOptions.timerIntervalInMilliseconds != nil) {
         NSTimeInterval timerIntervalInSeconds = [testOptions.timerIntervalInMilliseconds intValue] / 1000.0;
@@ -710,6 +746,12 @@ static dispatch_once_t onceToken = 0;
     if (testOptions.subsessionIntervalInMilliseconds != nil) {
         NSTimeInterval subsessionIntervalInSeconds = [testOptions.subsessionIntervalInMilliseconds intValue] / 1000.0;
         [ADJAdjustFactory setSubsessionInterval:subsessionIntervalInSeconds];
+    }
+    if (testOptions.attStatusInt != nil) {
+        [ADJAdjustFactory setAttStatus:testOptions.attStatusInt];
+    }
+    if (testOptions.idfa != nil) {
+        [ADJAdjustFactory setIdfa:testOptions.idfa];
     }
     if (testOptions.noBackoffWait) {
         [ADJAdjustFactory setSdkClickHandlerBackoffStrategy:[ADJBackoffStrategy backoffStrategyWithType:ADJNoWait]];
