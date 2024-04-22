@@ -1323,6 +1323,43 @@
 			};
 			name = Debug;
 		};
+		48CB42A07B3183AE34BB68E0352D637C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA315F00BCD4F26CB6AADDD43051D8FB /* tempo-applovin-mediation.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation.modulemap";
+				PRODUCT_MODULE_NAME = tempo_applovin_mediation;
+				PRODUCT_NAME = tempo_applovin_mediation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4D9DE30009015D3B5AB2A969051EA45C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DBBE1487BEB00F56C8983F5316D4615 /* Pods-AppLovin MAX Demo App - Swift.release.xcconfig */;
@@ -1434,43 +1471,6 @@
 			};
 			name = Debug;
 		};
-		6DC7A3B94FF6E2F6DCA21E0ECED36615 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA315F00BCD4F26CB6AADDD43051D8FB /* tempo-applovin-mediation.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation.modulemap";
-				PRODUCT_MODULE_NAME = tempo_applovin_mediation;
-				PRODUCT_NAME = tempo_applovin_mediation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		8002F5653E73729A5A07F2DE1592C4AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE27BBD782F1AADE91706ED0625525A8 /* AppLovinSDK.release.xcconfig */;
@@ -1549,44 +1549,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		9A93D851EF0E2366D04BBFA9BCAE1779 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E204AAC002E80D7B1FC50B084625550 /* tempo-applovin-mediation.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation.modulemap";
-				PRODUCT_MODULE_NAME = tempo_applovin_mediation;
-				PRODUCT_NAME = tempo_applovin_mediation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1709,6 +1671,44 @@
 			};
 			name = Release;
 		};
+		BF3D0C6E2029078C1A7EEC654506A1D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E204AAC002E80D7B1FC50B084625550 /* tempo-applovin-mediation.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/tempo-applovin-mediation/tempo-applovin-mediation.modulemap";
+				PRODUCT_MODULE_NAME = tempo_applovin_mediation;
+				PRODUCT_NAME = tempo_applovin_mediation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D4BB0414E6AA96EDD6C30C05AEB93368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA315F00BCD4F26CB6AADDD43051D8FB /* tempo-applovin-mediation.debug.xcconfig */;
@@ -1806,8 +1806,8 @@
 		A0B9834D27214C4A65B8FC08E4116A58 /* Build configuration list for PBXNativeTarget "tempo-applovin-mediation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DC7A3B94FF6E2F6DCA21E0ECED36615 /* Debug */,
-				9A93D851EF0E2366D04BBFA9BCAE1779 /* Release */,
+				48CB42A07B3183AE34BB68E0352D637C /* Debug */,
+				BF3D0C6E2029078C1A7EEC654506A1D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
