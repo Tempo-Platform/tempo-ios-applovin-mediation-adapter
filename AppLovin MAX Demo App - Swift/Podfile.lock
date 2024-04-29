@@ -3,10 +3,10 @@ PODS:
     - Adjust/Core (= 4.38.1)
   - Adjust/Core (4.38.1)
   - AppLovinSDK (12.4.1)
-  - tempo-applovin-mediation (1.5.1-rc.0):
+  - tempo-applovin-mediation (1.5.1-rc.1):
     - AppLovinSDK
-    - TempoSDK (= 1.5.0)
-  - TempoSDK (1.5.0)
+    - TempoSDK (= 1.5.1)
+  - TempoSDK (1.5.1)
 
 DEPENDENCIES:
   - Adjust
@@ -26,8 +26,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Adjust: e449a8b88cd2261d8f548df023823f7e861a059c
   AppLovinSDK: c57ad0d34625c971d2db127f8ef60570b28ff51a
-  tempo-applovin-mediation: e68e6b0a26afb65af680c86c6a1656246c2d8ef0
-  TempoSDK: 6922e6266e9b9dda238850b8d20c4f9229934b2b
+  tempo-applovin-mediation: 9cf7e886a5122d995508f5a4ef4cb2117617ed3e
+  TempoSDK: 508920d8ff38975d2ff118143cedec758118cea1
 
 PODFILE CHECKSUM: 280678affdf59aca9dd6e0ba3d10eef98bca8ee0
 
