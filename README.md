@@ -174,3 +174,4 @@ Go to Releases -> Newest draft version -> Edit -> Publish
 Once a Release has been published, the `cocoapods-release` workflow will deploy the new release to CocoaPods using:
 
 `pod trunk push <podspec-path> --allow-warnings --verbose`
+
