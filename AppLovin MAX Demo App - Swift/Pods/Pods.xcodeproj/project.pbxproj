@@ -254,7 +254,6 @@
 		5F13ACE1FCDCA3A739689D38C29ABA01 /* ADJLinkResolution.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJLinkResolution.m; path = Adjust/ADJLinkResolution.m; sourceTree = "<group>"; };
 		602F2B0E258AF5A2F0894239DBFBD922 /* tempo-applovin-mediation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "tempo-applovin-mediation-dummy.m"; sourceTree = "<group>"; };
 		6317BB02D74B3325D76E574C602BA50F /* ADJPackageParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageParams.h; path = Adjust/ADJPackageParams.h; sourceTree = "<group>"; };
-		63AB051BAB484E6EFA3E31CDBAFEFAAB /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-12.4.1/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		66F32063E4F80FA326C26EEAFCC2C24A /* tempo-applovin-mediation.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "tempo-applovin-mediation.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A4D06F6873C80476466E6969CCFE7F6 /* tempo-applovin-mediation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "tempo-applovin-mediation-prefix.pch"; sourceTree = "<group>"; };
 		6C452119328443B3A3BEAAC059B97B5F /* ResourceBundle-Adjust-Adjust-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Adjust-Adjust-Info.plist"; sourceTree = "<group>"; };
@@ -264,6 +263,7 @@
 		762904B4837D7C8B63943598FDF507E7 /* ADJPackageBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPackageBuilder.h; path = Adjust/ADJPackageBuilder.h; sourceTree = "<group>"; };
 		7C476216B2659E464E6B9CEE13E4F9F9 /* ADJUserDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJUserDefaults.m; path = Adjust/ADJUserDefaults.m; sourceTree = "<group>"; };
 		7FF5C62DF1E2D492F272FD7D2A1EF4A3 /* Adjust */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Adjust; path = Adjust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81390815E7543B15F4B6730322731428 /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-12.5.0/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		822C329E4E6706FF47CC944AD38DFD5C /* ADJAdRevenue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJAdRevenue.m; path = Adjust/ADJAdRevenue.m; sourceTree = "<group>"; };
 		8302A31B5B44D647941A5F909C5D6684 /* ADJTimerOnce.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerOnce.m; path = Adjust/ADJTimerOnce.m; sourceTree = "<group>"; };
 		857ACE2899BDC4E4113D0EA543A0D274 /* NSNumber+ADJAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+ADJAdditions.m"; path = "Adjust/ADJAdditions/NSNumber+ADJAdditions.m"; sourceTree = "<group>"; };
@@ -399,10 +399,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021E42B2D87F979154466DA561C011C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81390815E7543B15F4B6730322731428 /* AppLovinSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		07D2A099F28B9CF0D2213DA5B6A0235F /* AppLovinSDK */ = {
 			isa = PBXGroup;
 			children = (
-				91498F3A89BE917DE31EAA5F8CA402E2 /* Frameworks */,
+				021E42B2D87F979154466DA561C011C9 /* Frameworks */,
 				E0C74B3B31C5C677676EBA795689BA66 /* Support Files */,
 			);
 			name = AppLovinSDK;
@@ -559,14 +567,6 @@
 			);
 			name = "Pods-AppLovin MAX Demo App - Swift";
 			path = "Target Support Files/Pods-AppLovin MAX Demo App - Swift";
-			sourceTree = "<group>";
-		};
-		91498F3A89BE917DE31EAA5F8CA402E2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				63AB051BAB484E6EFA3E31CDBAFEFAAB /* AppLovinSDK.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A651368EF97F3D9B9BAA0C0FD537DD81 /* iOS */ = {
