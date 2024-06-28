@@ -20,7 +20,7 @@ class ALDemoInterstitialManualLoadingViewController : ALBaseAdViewController
     @IBAction func loadInterstitial(_ sender: AnyObject!)
     {
         logCallback()
-        ALSdk.shared()!.adService.loadNextAd(ALAdSize.interstitial, andNotify: self)
+        ALSdk.shared().adService.loadNextAd(ALAdSize.interstitial, andNotify: self)
     }
     
     @IBAction func showInterstitial(_ sender: AnyObject!)

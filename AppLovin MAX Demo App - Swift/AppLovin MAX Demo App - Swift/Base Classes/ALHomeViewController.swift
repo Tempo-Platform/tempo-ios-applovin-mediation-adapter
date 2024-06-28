@@ -42,7 +42,7 @@ class ALHomeViewController: UITableViewController
         
         if tableView.cellForRow(at: indexPath) == mediationDebuggerCell
         {
-            ALSdk.shared()!.showMediationDebugger()
+            ALSdk.shared().showMediationDebugger()
         }
         
         if indexPath.section == 2
@@ -101,13 +101,13 @@ class ALHomeViewController: UITableViewController
          * Toggling the sdk mute setting will affect whether your video ads begin in a muted state or not.
          */
         let sdk = ALSdk.shared()
-        sdk?.settings.isMuted = !(sdk?.settings.isMuted)!
+        sdk.settings.isMuted = !(sdk.settings.isMuted)
         sender.image = muteIconForCurrentSdkMuteSetting()
     }
     
     func muteIconForCurrentSdkMuteSetting() -> UIImage!
     {
-        return ALSdk.shared()!.settings.isMuted ? UIImage(named: "mute") : UIImage(named: "unmute")
+        return ALSdk.shared().settings.isMuted ? UIImage(named: "mute") : UIImage(named: "unmute")
     }
     
     // MARK: Table View Actions
