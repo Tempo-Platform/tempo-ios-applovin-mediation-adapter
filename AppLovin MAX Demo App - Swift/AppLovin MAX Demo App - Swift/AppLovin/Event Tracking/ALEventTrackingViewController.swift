@@ -59,7 +59,7 @@ class ALEventTrackingViewController : UITableViewController
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let eventService = ALSdk.shared()!.eventService
+        let eventService = ALSdk.shared().eventService
         
         switch indexPath.row
         {
