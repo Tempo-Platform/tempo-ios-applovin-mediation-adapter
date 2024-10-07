@@ -244,6 +244,7 @@
 		49620BBD057910E2983F0E6ADF065467 /* ADJConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJConfig.m; path = Adjust/ADJConfig.m; sourceTree = "<group>"; };
 		4A123DE1663BE16C07064B336948F558 /* ADJPurchase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchase.m; path = Adjust/ADJPurchase.m; sourceTree = "<group>"; };
 		4BE342D8E32AE7238B5EF9FE96DF02BD /* NSNumber+ADJAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+ADJAdditions.h"; path = "Adjust/ADJAdditions/NSNumber+ADJAdditions.h"; sourceTree = "<group>"; };
+		4BE5B7A6F51748DCBD381129DFB192E5 /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-13.0.0/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		4BE94D77FC3EC9A00782084B04FF134E /* ADJAdRevenue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJAdRevenue.h; path = Adjust/ADJAdRevenue.h; sourceTree = "<group>"; };
 		506E83B1BE2EF28D83AC969AF5DE1CB5 /* Adjust.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Adjust.debug.xcconfig; sourceTree = "<group>"; };
 		53AE2E1E1E3824D3328B7675FC4AB9CA /* ADJUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUtil.h; path = Adjust/ADJUtil.h; sourceTree = "<group>"; };
@@ -266,7 +267,6 @@
 		6F0E4EA16FA523A166C59CD7EB8E4C58 /* TempoSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TempoSDK; path = TempoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E270B86A39489C1F5BBDAFB6100CA1 /* ADJSessionFailure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJSessionFailure.h; path = Adjust/ADJSessionFailure.h; sourceTree = "<group>"; };
 		7506D9F9EEECF5D7E194DD78544F70C4 /* ADJBackoffStrategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJBackoffStrategy.m; path = Adjust/ADJBackoffStrategy.m; sourceTree = "<group>"; };
-		7779450B9D313A03741CE7A4548A6296 /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-12.5.0/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		78161DE809AE8EEEF80349DC8FBB9558 /* ADJUserDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUserDefaults.h; path = Adjust/ADJUserDefaults.h; sourceTree = "<group>"; };
 		786867810709895860BF2B852EEF5898 /* ADJTimerCycle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJTimerCycle.m; path = Adjust/ADJTimerCycle.m; sourceTree = "<group>"; };
 		78D767BC4776545E71A0BAC1BCB1E61F /* ADJTimerOnce.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJTimerOnce.h; path = Adjust/ADJTimerOnce.h; sourceTree = "<group>"; };
@@ -401,6 +401,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077D49BF800E6F553F201E071A5D9086 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BE5B7A6F51748DCBD381129DFB192E5 /* AppLovinSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		091A372C5A217979EE29CE78A68243A6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,14 +522,6 @@
 				045DD5D4061DEC210C8D9608EEB71177 /* PrivacyInfo.xcprivacy */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		1381D44B898DF4F305AFA6B2601CE46F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7779450B9D313A03741CE7A4548A6296 /* AppLovinSDK.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
@@ -671,7 +671,7 @@
 		A9E2EC1D95A49C7613551D19987243A7 /* AppLovinSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1381D44B898DF4F305AFA6B2601CE46F /* Frameworks */,
+				077D49BF800E6F553F201E071A5D9086 /* Frameworks */,
 				091A372C5A217979EE29CE78A68243A6 /* Support Files */,
 			);
 			name = AppLovinSDK;

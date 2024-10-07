@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.7.1"
+    let TEMPO_ADAPTER_VERSION: String = "1.7.2-rc.0"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -24,14 +24,12 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     // Privacy/consent
     var alHasUserConsent: Bool?
     var isDoNotSell: Bool?
-    var isAgeRestrictedUser: Bool?
 
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         
         // Get current privacy/consent values
         alHasUserConsent = ALPrivacySettings.hasUserConsent()
         isDoNotSell = ALPrivacySettings.isDoNotSell()
-        isAgeRestrictedUser = ALPrivacySettings.isAgeRestrictedUser()
         
         // Run any backups
         do {

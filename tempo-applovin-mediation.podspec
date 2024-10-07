@@ -6,7 +6,7 @@
 
 Pod::Spec.new do |spec|
   spec.name          = 'tempo-applovin-mediation'
-  spec.version       = '1.7.1'
+  spec.version       = '1.7.2-rc.0'
   spec.swift_version = '5.6.1'
   spec.author        = { 'Tempo Engineering' => 'development@tempoplatform.com' }
   spec.license       = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
     }
 
   spec.dependency 'TempoSDK', '1.7.0'
-  spec.dependency 'AppLovinSDK'
+  spec.dependency 'AppLovinSDK', '< 14.0'
   spec.requires_arc     = true
   spec.frameworks       = 'Foundation', 'UIKit'
   spec.static_framework = true
