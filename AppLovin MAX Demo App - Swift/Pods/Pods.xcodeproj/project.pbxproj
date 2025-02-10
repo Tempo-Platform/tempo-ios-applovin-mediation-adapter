@@ -201,6 +201,7 @@
 		018961EA34A66384349E76B2DCD44390 /* ADJUrlStrategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJUrlStrategy.h; path = Adjust/ADJUrlStrategy.h; sourceTree = "<group>"; };
 		0199E37EEF58D9C62773A9C7AE80B803 /* ADJUserDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJUserDefaults.m; path = Adjust/ADJUserDefaults.m; sourceTree = "<group>"; };
 		045DD5D4061DEC210C8D9608EEB71177 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Adjust/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		04B79F42CF6EB83239F85E94A206F67A /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-13.1.0/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		04F7C329936901350EEBDAAE55ABBEC1 /* TempoSDK-TempoSDK */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "TempoSDK-TempoSDK"; path = TempoSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		06497C2BFF5B6CCC5977C7BCE60FA94B /* ADJPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ADJPurchase.h; path = Adjust/ADJPurchase.h; sourceTree = "<group>"; };
 		0B9BD63B671B920B0B4F882E9F2055E3 /* TempoErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoErrors.swift; path = TempoSDK/TempoErrors.swift; sourceTree = "<group>"; };
@@ -295,7 +296,6 @@
 		A2D3460CD17905E40282CBDC76AC91FE /* ADJPurchaseVerificationResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ADJPurchaseVerificationResult.m; path = Adjust/ADJPurchaseVerificationResult.m; sourceTree = "<group>"; };
 		A67C338A016B564DB6F8DCFA2641B250 /* TempoAdController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdController.swift; path = TempoSDK/TempoAdController.swift; sourceTree = "<group>"; };
 		A9468B20A84E263A2E7FD8228D3A1AF1 /* TempoAdListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TempoAdListener.swift; path = TempoSDK/TempoAdListener.swift; sourceTree = "<group>"; };
-		AEBE7CB3D70F54772A73616AB9C4DBEE /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = AppLovinSDK.xcframework; path = "applovin-ios-sdk-13.0.1/AppLovinSDK.xcframework"; sourceTree = "<group>"; };
 		AEFDA29AA44DC55F60B813EBCF2804AD /* ResourceBundle-Adjust-Adjust-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Adjust-Adjust-Info.plist"; sourceTree = "<group>"; };
 		B0931A0ECB579DDC30A8030291DFFCE0 /* Pods-AppLovin MAX Demo App - Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AppLovin MAX Demo App - Swift-Info.plist"; sourceTree = "<group>"; };
 		B29D5C6ADF46C994D57E8856C762C736 /* Adjust-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Adjust-dummy.m"; sourceTree = "<group>"; };
@@ -651,6 +651,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		9F5DB27F6B725E268000441ECCADBC05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B79F42CF6EB83239F85E94A206F67A /* AppLovinSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A651368EF97F3D9B9BAA0C0FD537DD81 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,7 +671,7 @@
 		A9E2EC1D95A49C7613551D19987243A7 /* AppLovinSDK */ = {
 			isa = PBXGroup;
 			children = (
-				DCACA47FE41232F001D7DF4B61C9C868 /* Frameworks */,
+				9F5DB27F6B725E268000441ECCADBC05 /* Frameworks */,
 				091A372C5A217979EE29CE78A68243A6 /* Support Files */,
 			);
 			name = AppLovinSDK;
@@ -700,14 +708,6 @@
 			);
 			name = "tempo-applovin-mediation";
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		DCACA47FE41232F001D7DF4B61C9C868 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AEBE7CB3D70F54772A73616AB9C4DBEE /* AppLovinSDK.xcframework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E4AA24F56693217F8E4874D27B5578DF /* Pods */ = {
