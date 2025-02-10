@@ -29,7 +29,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ## AppLovinSDK
 
 
-Copyright 2024 AppLovin Corp. All rights reserved.
+Copyright 2025 AppLovin Corp. All rights reserved.
 
 The AppLovin SDK is available under a commercial license (https://www.applovin.com/eula).
 
