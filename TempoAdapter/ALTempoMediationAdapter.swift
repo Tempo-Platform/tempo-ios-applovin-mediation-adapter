@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.9.4"
+    let TEMPO_ADAPTER_VERSION: String = "1.9.5-rc.0"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -31,6 +31,9 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         alHasUserConsent = ALPrivacySettings.hasUserConsent()
         isDoNotSell = ALPrivacySettings.isDoNotSell()
         
+        // Updarte SDK privacy state
+        updateTempoPrivacy(hasUserConsent: alHasUserConsent ?? false)
+        
         // Run any backups
         do {
             try TempoDataBackup.initCheck()
@@ -40,6 +43,20 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         
         // Run AppLovin initialisers
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
+    }
+    
+    private func updateTempoPrivacy(hasUserConsent: Bool) {
+        // Update any privacy blockers
+        let tempoExtInstance = TempoExternal()
+        TempoExternal.instance?.updateStopProfileData(stopProfileData: !(hasUserConsent ?? false))
+        
+        // Alternative
+        if(hasUserConsent){
+            TempoProfile.updateLocState(newState: .UNCHECKED)
+        } else{
+            TempoProfile.updateLocState(newState: .DISABLED)
+        }
+        TempoProfile.updateLocState(newState: .DISABLED)
     }
     
     /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
