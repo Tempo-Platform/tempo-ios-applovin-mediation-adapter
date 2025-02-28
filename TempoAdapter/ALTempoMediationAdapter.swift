@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.9.5-rc.0"
+    let TEMPO_ADAPTER_VERSION: String = "1.9.5-rc.1"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -34,7 +34,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         do {
             try TempoDataBackup.initCheck()
         } catch {
-            TempoUtils.Warn(msg: "Error checking for backup metrics in adapter")
+            TempoUtils.warn(msg: "Error checking for backup metrics in adapter")
         }
         
         // Run AppLovin initialisers
@@ -53,7 +53,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
         // Update SDK loc state
         let locState: LocationState = alHasUserConsent! ? LocationState.UNCHECKED : LocationState.DISABLED
-        TempoUtils.Say(msg: "⚠️ alHasUserConsent is \(alHasUserConsent!), newState=\(locState)")
+        TempoUtils.say(msg: "⚠️ alHasUserConsent is \(alHasUserConsent!), newState=\(locState)")
         TempoProfile.updateLocState(newState: locState)
     }
     
@@ -69,7 +69,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         // Check for valid App ID in response parameters
         let appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
         guard !appId.isEmpty else {
-            TempoUtils.Warn(msg: "Invalid App ID")
+            TempoUtils.warn(msg: "Invalid App ID")
             self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
             return
         }
@@ -81,7 +81,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         let cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
         // Console log for dev check
-        TempoUtils.Say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
+        TempoUtils.say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
         
         // Create new interstitial AdController - nil check just in case
         if self.interstitial == nil {
@@ -136,7 +136,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         // Check for valid App ID in response parameters
         let appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
         guard !appId.isEmpty else {
-            TempoUtils.Warn(msg: "Invalid App ID")
+            TempoUtils.warn(msg: "Invalid App ID")
             self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
             return
         }
@@ -147,7 +147,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         let cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
         // Console log for dev check
-        TempoUtils.Say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
+        TempoUtils.say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
 
         // Create new rewarded Ad Controller - nil check just in case
         if self.rewarded == nil {
@@ -191,10 +191,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     func getParameterString(paramKey: String, alParams: MAAdapterResponseParameters) -> String {
         
         if let validatedString = alParams.customParameters[paramKey] as? String {
-              TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(validatedString)")
+              TempoUtils.say(msg: "✅ customParameters[\(paramKey)] is valid: \(validatedString)")
               return validatedString
           } else {
-              TempoUtils.Say(msg: "❌ customParameters[\(paramKey)] is either nil or not a String")
+              TempoUtils.say(msg: "❌ customParameters[\(paramKey)] is either nil or not a String")
               return ""
           }
     }
@@ -203,10 +203,10 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     func getParameterAsFloat(paramKey: String, alParams: MAAdapterResponseParameters) -> Float {
         
         if let validatedString = alParams.customParameters[paramKey] as? String, let floatValue = Float(validatedString) {
-            TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(floatValue)")
+            TempoUtils.say(msg: "✅ customParameters[\(paramKey)] is valid: \(floatValue)")
             return floatValue
         } else {
-            TempoUtils.Say(msg: "❌ customParameters[\(paramKey)] is either nil, not a String, or cannot be converted to a Float")
+            TempoUtils.say(msg: "❌ customParameters[\(paramKey)] is either nil, not a String, or cannot be converted to a Float")
             return 0
         }
     }
