@@ -7,7 +7,7 @@ import AppLovinSDK
 public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapter, MARewardedAdapter, TempoAdListener {
 
     let ADAPTER_TYPE: String = "APPLOVIN"
-    let TEMPO_ADAPTER_VERSION: String = "1.9.4"
+    let TEMPO_ADAPTER_VERSION: String = "1.9.5-rc.1"
     let CUST_CPM_FLR = "cpm_floor"
     let CUST_APP_ID = "app_id"
     
@@ -27,42 +27,61 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
 
     public override func initialize(with parameters: MAAdapterInitializationParameters, completionHandler: @escaping (MAAdapterInitializationStatus, String?) -> Void) {
         
-        // Get current privacy/consent values
-        alHasUserConsent = ALPrivacySettings.hasUserConsent()
-        isDoNotSell = ALPrivacySettings.isDoNotSell()
+        // Update SDK privacy state
+        updateTempoPrivacy()
         
         // Run any backups
         do {
             try TempoDataBackup.initCheck()
         } catch {
-            TempoUtils.Warn(msg: "Error checking for backup metrics in adapter")
+            TempoUtils.warn(msg: "Error checking for backup metrics in adapter")
         }
         
         // Run AppLovin initialisers
         completionHandler(MAAdapterInitializationStatus.initializedUnknown, nil)
     }
     
+    /// Checks if user has overtly allowed consent for personal data to be used
+    private func updateTempoPrivacy() {
+        
+        // Get current privacy/consent values
+        alHasUserConsent = ALPrivacySettings.hasUserConsent()
+        isDoNotSell = ALPrivacySettings.isDoNotSell()
+        
+        // Make not nil
+        alHasUserConsent = alHasUserConsent ?? false
+
+        // Update SDK loc state
+        let locState: LocationState = alHasUserConsent! ? LocationState.UNCHECKED : LocationState.DISABLED
+        TempoUtils.say(msg: "⚠️ alHasUserConsent is \(alHasUserConsent!), newState=\(locState)")
+        TempoProfile.updateLocState(newState: locState)
+    }
+    
     /// Function used by AppLovin SDK when loading an INTERSTITIAL ad
     public func loadInterstitialAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MAInterstitialAdapterDelegate) {
+        
+        // Check presonal data consent first
+        updateTempoPrivacy()
         
         // We use this value to trigger AppLovin callbacks
         self.interstitialDelegate = delegate
         
         // Check for valid App ID in response parameters
         let appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
-        
         guard !appId.isEmpty else {
-            TempoUtils.Warn(msg: "Invalid App ID")
+            TempoUtils.warn(msg: "Invalid App ID")
             self.interstitialDelegate?.didFailToLoadInterstitialAdWithError(MAAdapterError.notInitialized)
             return
         }
+        
         // Get values from AppLovin and custom parameters
         let placementId = parameters.thirdPartyAdPlacementIdentifier
+        
         // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
         let cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
-        
-        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
+        // Console log for dev check
+        TempoUtils.say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
         
         // Create new interstitial AdController - nil check just in case
         if self.interstitial == nil {
@@ -108,23 +127,27 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     /// Function used by AppLovin SDK when loading an REWARDED ad
     public func loadRewardedAd(for parameters: MAAdapterResponseParameters, andNotify delegate: MARewardedAdapterDelegate) {
         
+        // Check presonal data consent first
+        updateTempoPrivacy()
+        
         // We use this value to trigger AppLovin callbacks
         self.rewardedDelegate = delegate
         
         // Check for valid App ID in response parameters
         let appId = getParameterString(paramKey: CUST_APP_ID, alParams: parameters)
-        
         guard !appId.isEmpty else {
-            TempoUtils.Warn(msg: "Invalid App ID")
+            TempoUtils.warn(msg: "Invalid App ID")
             self.rewardedDelegate?.didFailToLoadRewardedAdWithError(MAAdapterError.notInitialized)
             return
         }
         // Get values from AppLovin and custom parameters
         let placementId = parameters.thirdPartyAdPlacementIdentifier
+        
         // Check for CPM Floor in custom parameters, if missing (or typo) parameter value will be nil
         let cpmFloor = getParameterAsFloat(paramKey: CUST_CPM_FLR, alParams: parameters)
         
-        TempoUtils.Say(msg: "AppID=\(appId ?? "<appId?>"), CPMFloor=\(cpmFloor), PlacementID=\(placementId ?? "<placementId?>")")
+        // Console log for dev check
+        TempoUtils.say(msg: "AppID=\(appId), CPMFloor=\(cpmFloor), PlacementID=\(placementId)")
 
         // Create new rewarded Ad Controller - nil check just in case
         if self.rewarded == nil {
@@ -156,7 +179,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.onTempoAdShowFailed(isInterstitial: false, reason: "Could not get a parent ViewController")
             return
         }
-        
         guard self.rewarded != nil else {
             self.onTempoAdShowFailed(isInterstitial: false, reason: "Tempo rewarded AdController was nil")
             return
@@ -167,22 +189,24 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
     
     /// Validates parameter String values
     func getParameterString(paramKey: String, alParams: MAAdapterResponseParameters) -> String {
+        
         if let validatedString = alParams.customParameters[paramKey] as? String {
-              TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(validatedString)")
+              TempoUtils.say(msg: "✅ customParameters[\(paramKey)] is valid: \(validatedString)")
               return validatedString
           } else {
-              TempoUtils.Say(msg: "❌ customParameters[\(paramKey)] is either nil or not a String")
+              TempoUtils.say(msg: "❌ customParameters[\(paramKey)] is either nil or not a String")
               return ""
           }
     }
     
     /// Validates parameter Float values
     func getParameterAsFloat(paramKey: String, alParams: MAAdapterResponseParameters) -> Float {
+        
         if let validatedString = alParams.customParameters[paramKey] as? String, let floatValue = Float(validatedString) {
-            TempoUtils.Say(msg: "✅ customParameters[\(paramKey)] is valid: \(floatValue)")
+            TempoUtils.say(msg: "✅ customParameters[\(paramKey)] is valid: \(floatValue)")
             return floatValue
         } else {
-            TempoUtils.Say(msg: "❌ customParameters[\(paramKey)] is either nil, not a String, or cannot be converted to a Float")
+            TempoUtils.say(msg: "❌ customParameters[\(paramKey)] is either nil, not a String, or cannot be converted to a Float")
             return 0
         }
     }
@@ -193,7 +217,7 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
         // TODO: Apparently this was deprecated in iOS 13 and may have issues with iPad apps that have multiple windows
         let viewController = UIApplication.shared.keyWindow?.rootViewController
         return viewController
-//        
+//
 //        // TODO: was originally in front of above returning code (with 'var viewController') - look into this
 //        // Check if ALSdk version is sufficient for using presentingViewController
 //        if ALSdk.versionCode >= 11020199 {
@@ -264,7 +288,6 @@ public class ALTempoMediationAdapter  : ALMediationAdapter, MAInterstitialAdapte
             self.rewardedDelegate?.didFailToDisplayRewardedAdWithError(MAAdapterError.internalError)
         }
     }
-    
     public func getTempoAdapterVersion() -> String? {
         return TEMPO_ADAPTER_VERSION
     }
