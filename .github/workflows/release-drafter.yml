@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - tempo-ios-ironsource-mediation.podspec
+      - tempo-applovin-mediation.podspec
       - TempoAdapter/ALTempoMediationAdapter.swift
 
   # pull_request event is required for autolabeler
